@@ -1,0 +1,48 @@
+/* Loading Fonts */
+@font-face {
+    font-family: 'PrimaryFont';
+    src: url('../fonts/primaryfont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Styling Fonts */
+.primary-font {
+    font-family: PrimaryFont, PrimaryFont, Helvetica, sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+/* Text */
+
+
+/* Backgrounds */
+
+
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 3.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: var(--dark-color);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+
+.btn-primary:hover {
+    background-color: var(--light-primary-color);
+}
