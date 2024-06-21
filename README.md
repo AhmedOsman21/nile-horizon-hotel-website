@@ -1,1 +1,1 @@
-# blue-nile-horizon-hotel-website
+# nile-horizon-hotel-website
