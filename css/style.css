@@ -7,8 +7,7 @@
 
 /* Body Styling */
 body {
-  font-family: "Roboto", sans-serif;
-  max-width: 100%;
+  font-family: "Roboto", sans-serif;;
 }
 
 header {
@@ -183,8 +182,85 @@ header .feature {
 
 /* =============================== Media Queries =============================== */
 
+/* ===== Navbar [Mini Screens] ===== */
+@media screen and (max-width: 359px) {
+  .navbar {
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .navbar .menu-icon {
+    display: flex;
+    position: absolute;
+    right: 0;
+  }
+
+  /* Logo */
+  .navbar .logo .logo-text {
+    font-size: 1rem;
+  }
+
+  /* Navigation Menu */
+  .navbar nav ul {
+    display: none; /* Hide navigation menu */
+  }
+
+  .navbar nav {
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Show Navigation Menu */
+  .navbar.menu-open nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    position: absolute;
+    top: 2.2rem;
+    right: -3rem;
+    background-color: var(--dark-color);
+    gap: 0;
+    opacity: 0.9;
+    border-radius: 0 0 0 2.5rem;
+  }
+
+  .navbar.menu-open ul li,
+  .navbar.menu-open ul a {
+    text-align: center;
+    border: none;
+    color: #fff;
+  }
+
+  .navbar.menu-open ul li {
+    width: 100%;
+  }
+
+  /* Navbar Links */
+  .navbar.menu-open ul li a {
+    width: 100%;
+    border-bottom: var(--primary-color) solid 1px;
+  }
+
+  .navbar.menu-open ul li a:hover {
+    background-color: var(--primary-color);
+    color: #111;
+  }
+
+  .navbar.navbar.menu-open ul :last-child a {
+    border-bottom: none;
+    border-radius: 0 0 0 2.5rem;
+  }
+
+  /* Sign in button */
+  .navbar .featured-btn {
+    display: none;
+  }
+}
+
 /* ===== Navbar [Mobiles & Tablets] ===== */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 360px) and (max-width: 768px) {
   .navbar {
     width: 100%;
   }
@@ -211,8 +287,8 @@ header .feature {
     flex-direction: column;
     width: 18.75rem;
     position: absolute;
-    top: 1.5rem;
-    right: -5rem;
+    top: 1.7rem;
+    right: -5.9rem;
     background-color: var(--dark-color);
     gap: 0;
     opacity: 0.9;
@@ -363,7 +439,7 @@ header .feature {
   }
 }
 
-@media screen and (max-height: 598px) {
+@media screen and (max-height: 598px) and (max-width: 500px){
   header .content .feature .content-header {
     display: none;
   }
@@ -377,6 +453,8 @@ header .feature {
     gap: 0.5rem;
   }
 }
+
+/* Modern Mobile Screens */
 @media screen and (min-width: 369px) and (max-width: 500px) {
   /* Content Container */
   header .content {
