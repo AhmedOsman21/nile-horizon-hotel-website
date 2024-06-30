@@ -83,7 +83,7 @@ nav {
   padding: 1rem 0.5rem;
 }
 
-.navbar li a:hover {
+.navbar li a:hover, .navbar li a.current {
   color: var(--primary-color);
 }
 
@@ -243,12 +243,16 @@ header .feature {
     border-bottom: var(--primary-color) solid 1px;
   }
 
+  .navbar.menu-open ul li a.current {
+    color: var(--light-primary-color);
+  }
+  
   .navbar.menu-open ul li a:hover {
     background-color: var(--primary-color);
     color: #111;
   }
 
-  .navbar.navbar.menu-open ul :last-child a {
+  navbar.menu-open ul :last-child a {
     border-bottom: none;
     border-radius: 0 0 0 2.5rem;
   }
@@ -312,12 +316,16 @@ header .feature {
     border-bottom: var(--primary-color) solid 1px;
   }
 
-  .navbar.menu-open ul li a:hover {
+  .navbar.menu-open ul li a.current {
+    color: var(--light-primary-color);
+  }
+
+  .navbar.menu-open ul li a:hover{
     background-color: var(--primary-color);
     color: #111;
   }
 
-  .navbar.navbar.menu-open ul :last-child a {
+  .navbar.menu-open ul :last-child a {
     border-bottom: none;
     border-radius: 0 0 0 2.5rem;
   }
