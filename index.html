@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="favicon.ico"
-    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta
       name="description"
       content="Enjoy stunning views, cozy rooms, and top-notch service. Your perfect getaway awaits!"
@@ -61,6 +57,55 @@
         </div>
         <i id="menu-icon" class="fa-solid fa-bars fa-2x menu-icon"></i>
       </div>
+
+      <section class="content">
+        <div class="feature">
+          <h1 class="content-header primary-font">The Nile Horizon</h1>
+          <form action="" method="get" class="room-search">
+            <div class="form-group" id="location-group">
+              <label for="location">Location</label>
+              <input
+                type="search"
+                name="location"
+                id="location"
+                placeholder="Location"
+                autocomplete="address-level2"
+              />
+            </div>
+            <div class="form-group" id="check-in-group">
+              <label for="check-in">Check in</label>
+              <input
+                type="date"
+                name="check_in"
+                id="check-in"
+              />
+            </div>
+            <div class="form-group" id="check-out-group">
+              <label for="check-out">Check out</label>
+              <input
+                type="date"
+                name="check_out"
+                id="check-out"
+              />
+            </div>
+            <div class="form-group" id="guests-number-group">
+              <label for="guests-number">People</label>
+              <input
+                type="number"
+                name="guests_number"
+                id="guests-number"
+                placeholder="Rooms for"
+                min="1"
+              />
+            </div>
+            <input
+              type="submit"
+              value="Search"
+              class="btn btn-primary search-btn"
+            />
+          </form>
+        </div>
+      </section>
     </header>
 
     <script src="js/main.js"></script>

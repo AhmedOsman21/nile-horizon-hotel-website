@@ -8,16 +8,23 @@
 /* Body Styling */
 body {
   font-family: "Roboto", sans-serif;
+  max-width: 100%;
+}
+
+header {
+  position: relative;
 }
 
 /* Navbar */
 .navbar {
   display: flex;
-  background-color: var(--bg-light);
+  background-color: var(--light-color);
   justify-content: space-between;
   align-items: center;
   height: 70px;
   padding: 1.2rem 1rem 0;
+  position: absolute;
+  width: 100%;
 }
 
 .navbar > * {
@@ -53,7 +60,7 @@ body {
   width: 2rem;
 }
 
-/* Navbar Menu */
+/* Navigation Menu */
 nav {
   margin-right: 3rem;
 }
@@ -85,7 +92,7 @@ nav {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* Hide the menu icon */
+/* The Menu Icon */
 .navbar .menu-icon {
   display: none;
   text-align: center;
@@ -94,6 +101,89 @@ nav {
   padding: 0.5rem 1rem;
 }
 
+/* Home Leading */
+header .content {
+  background-image: url("../img/hero.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: rgba(14, 5, 3, 0.685);
+  background-size: cover;
+  background-blend-mode: multiply;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Heading & Search Form Container */
+header .feature {
+  text-align: center;
+  height: 30vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Search Form */
+.content form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  background-color: rgba(99, 94, 93, 0.438);
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+/* Labels */
+.content .feature .form-group label {
+  display: none;
+}
+
+/* Inputs */
+.content .form-group input {
+  border: none;
+  padding: 1rem;
+  width: 9rem;
+  height: 3rem;
+  border-radius: 4px;
+}
+
+.content .form-group input:focus {
+  border: none;
+  color: #fff;
+  text-align: left;
+  outline: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+/* Placeholders */
+.content .form-group input,
+.content .form-group input::placeholder {
+  color: var(--dark-color);
+  text-align: center;
+}
+
+.content .form-group input:focus::placeholder {
+  color: rgba(255, 242, 239, 0.658);
+  text-align: left;
+}
+
+/* Guests Number input field */
+.content .form-group input[type="number"],
+.content .form-group input[type="number"]:focus {
+  text-align: center;
+}
+
+/* Search Button */
+.content form .search-btn {
+  padding: 1.2rem 3rem;
+}
+
+/* =============================== Media Queries =============================== */
+
+/* ===== Navbar [Mobiles & Tablets] ===== */
 @media screen and (max-width: 768px) {
   .navbar {
     width: 100%;
@@ -104,12 +194,9 @@ nav {
     justify-content: center;
   }
 
+  /* Navigation Menu */
   .navbar nav ul {
-    display: none;
-  }
-
-  .navbar .featured-btn {
-    display: none;
+    display: none; /* Hide navigation menu */
   }
 
   .navbar nav {
@@ -118,13 +205,14 @@ nav {
     position: relative;
   }
 
+  /* Show Navigation Menu */
   .navbar.menu-open nav ul {
     display: flex;
     flex-direction: column;
     width: 18.75rem;
     position: absolute;
     top: 1.5rem;
-    right: -6.75rem;
+    right: -5rem;
     background-color: var(--dark-color);
     gap: 0;
     opacity: 0.9;
@@ -142,11 +230,9 @@ nav {
     width: 100%;
   }
 
+  /* Navbar Links */
   .navbar.menu-open ul li a {
     width: 100%;
-  }
-
-  .navbar.menu-open ul li a {
     border-bottom: var(--primary-color) solid 1px;
   }
 
@@ -159,8 +245,14 @@ nav {
     border-bottom: none;
     border-radius: 0 0 0 2.5rem;
   }
+
+  /* Sign in button */
+  .navbar .featured-btn {
+    display: none;
+  }
 }
 
+/* ===== Navbar [Mobiles & Tablets] ===== */
 @media screen and (min-width: 769px) and (max-width: 1100px) {
   .navbar {
     flex-wrap: wrap;
@@ -188,5 +280,183 @@ nav {
 
   .navbar .featured-btn .btn {
     padding: 0.8rem 3rem;
+  }
+}
+
+/* ===== Home Lead Section [Mobiles] ===== */
+/* Old Devices */
+@media screen and (max-width: 368px) {
+  header .content {
+    height: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  /* Feature Container */
+  header .feature {
+    padding: 2rem 0;
+    width: 95%;
+    height: fit-content;
+  }
+
+  /* Header */
+  header .content .feature .content-header {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Search Form */
+  header .content .feature form {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 2rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  /* Form Groups */
+  .content .feature form .form-group {
+    width: 100%;
+    text-align: left;
+  }
+
+  .feature #guests-number-group {
+    width: 40%;
+    flex-basis: 100%;
+  }
+
+  /* Labels */
+  .content .feature .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    width: max-content;
+    padding: 0.5rem;
+    color: var(--light-color);
+  }
+
+  /* Inputs */
+  .content .feature form .form-group input {
+    width: 100%;
+    color: var(--dark-color);
+  }
+
+  .content .feature .form-group input#guests-number {
+    flex-basis: 100%;
+  }
+
+  /* Input Placeholders */
+  .content .form-group input::placeholder {
+    text-align: center;
+  }
+
+  .content .form-group input:focus::placeholder {
+    color: transparent;
+  }
+
+  .content .feature form .search-btn {
+    padding: 1rem 2rem;
+    flex-grow: 2;
+    margin-top: 1.9rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-height: 598px) {
+  header .content .feature .content-header {
+    display: none;
+  }
+  /* Search Form */
+  header .content .feature form {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 2rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    gap: 0.5rem;
+  }
+}
+@media screen and (min-width: 369px) and (max-width: 500px) {
+  /* Content Container */
+  header .content {
+    height: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  /* Feature Container */
+  header .feature {
+    height: 100%;
+    max-height: 100%;
+    width: 95%;
+  }
+
+  /* Header */
+  header .content .feature .content-header {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  /* Search Form */
+  header .content .feature form {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  /* Form Groups */
+  .content .feature form .form-group {
+    width: 46.7%;
+    text-align: left;
+  }
+
+  .content form #location-group {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .feature #guests-number-group {
+    width: 40%;
+  }
+
+  /* Labels */
+  .content .feature .form-group label {
+    display: block;
+    width: max-content;
+    padding: 0.2rem 0.5rem;
+    color: var(--light-color);
+  }
+
+  /* Inputs */
+  .content .feature form .form-group input {
+    width: 100%;
+    color: var(--dark-color);
+  }
+
+  .feature #guests-number-group > input {
+    width: 100%;
+  }
+
+  .content .feature .form-group input#guests-number {
+    flex-basis: 100%;
+  }
+
+  /* Input Placeholders */
+  .content .form-group input::placeholder {
+    text-align: center;
+  }
+
+  .content .form-group input:focus::placeholder {
+    color: transparent;
+  }
+
+  .content .feature form .search-btn {
+    padding: 1rem 2rem;
+    flex-grow: 2;
+    margin-top: 1.5rem;
   }
 }
