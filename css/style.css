@@ -7,7 +7,7 @@
 
 /* Body Styling */
 body {
-  font-family: "Roboto", sans-serif;;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -439,7 +439,7 @@ header .feature {
   }
 }
 
-@media screen and (max-height: 598px) and (max-width: 500px){
+@media screen and (max-height: 598px) and (max-width: 500px) {
   header .content .feature .content-header {
     display: none;
   }
@@ -536,5 +536,197 @@ header .feature {
     padding: 1rem 2rem;
     flex-grow: 2;
     margin-top: 1.5rem;
+  }
+}
+
+/* ===== Home Lead Section [Tablets] ===== */
+/* Small Tablets */
+@media screen and (min-width: 501px) and (max-width: 767px) {
+  /* Content Container */
+  header .content {
+    height: 70%;
+    min-height: 70vh;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  /* Feature Container */
+  header .feature {
+    height: 100%;
+    max-height: 100%;
+    width: 90%;
+  }
+
+  /* Header */
+  header .content .feature .content-header {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  /* Search Form */
+  header .content .feature form {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 2rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  /* Form Groups */
+  .content .feature form .form-group {
+    flex-basis: 47%;
+    text-align: left;
+  }
+
+  .content form #location-group {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .feature #guests-number-group {
+    flex-basis: 40%;
+  }
+
+  /* Labels */
+  .content .feature .form-group label {
+    display: block;
+    width: max-content;
+    padding: 0.2rem 0.5rem;
+    color: var(--light-color);
+  }
+
+  /* Inputs */
+  .content .feature form .form-group input {
+    width: 100%;
+    color: var(--dark-color);
+  }
+
+  .feature #guests-number-group > input {
+    width: 100%;
+  }
+
+  .content .feature .form-group input#guests-number {
+    flex-basis: 100%;
+  }
+
+  /* Input Placeholders */
+  .content .form-group input::placeholder {
+    text-align: center;
+  }
+
+  .content .form-group input:focus::placeholder {
+    color: transparent;
+  }
+
+  .content .feature form .search-btn {
+    padding: 1rem 2rem;
+    flex-grow: 2;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Standard Tablet Screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  header .content {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  /* Feature Container */
+  header .feature {
+    width: 95%;
+  }
+
+  /* Header */
+  header .content .feature .content-header {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+
+  /* Search Form */
+  header .content .feature form {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 2rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  /* Form Groups */
+  .content .feature form .form-group {
+    width: 30%;
+    text-align: left;
+  }
+
+  .content form #check-in-group,
+  .content form #check-out-group {
+    flex-basis: 25%;
+  }
+
+  .content form #location-group {
+    max-width: 45%;
+    flex-basis: 45%;
+  }
+
+  .feature #guests-number-group {
+    flex-basis: 20%;
+  }
+
+  /* Labels */
+  .content .feature .form-group label {
+    display: block;
+    width: max-content;
+    padding: 0.2rem 0.5rem;
+    color: var(--light-color);
+  }
+
+  /* Inputs */
+  .content .feature form .form-group input {
+    width: 100%;
+    color: var(--dark-color);
+  }
+
+  /* Input Placeholders */
+  .content .form-group input::placeholder {
+    text-align: center;
+  }
+
+  .content .form-group input:focus::placeholder {
+    color: transparent;
+  }
+
+  .content form .search-btn {
+    width: 73%;
+    position: relative;
+    top: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (max-height: 567px) {
+  header .feature {
+    height: unset;
+    padding-top: 8rem;
+  }
+
+  header .feature .content-header {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-height: 568px) and (max-height: 767px) {
+  header .feature {
+    height: unset;
+    padding-top: 7rem;
+  }
+
+  header .feature .content-header {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (max-height:768px) {
+  header .content {
+    min-height: 100vh;
   }
 }
