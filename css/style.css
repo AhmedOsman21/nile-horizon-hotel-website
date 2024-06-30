@@ -62,6 +62,7 @@ header {
 /* Navigation Menu */
 nav {
   margin-right: 3rem;
+  z-index: 1;
 }
 
 .navbar ul {
@@ -83,7 +84,8 @@ nav {
   padding: 1rem 0.5rem;
 }
 
-.navbar li a:hover, .navbar li a.current {
+.navbar li a:hover,
+.navbar li a.current {
   color: var(--primary-color);
 }
 
@@ -152,9 +154,26 @@ header .feature {
 .content .form-group input:focus {
   border: none;
   color: #fff;
-  text-align: left;
+  text-align: center;
   outline: 2px solid var(--primary-color);
   background-color: var(--primary-color);
+}
+
+/* Date input fields */
+.content .form-group input[type="date"] { 
+  direction: rtl;
+  position: relative;
+  padding-left: 20px;
+}
+
+.content .form-group input[type="date"]:focus {
+  text-align: center;
+}
+
+/* Guests Number input field */
+.content .form-group input[type="number"],
+.content .form-group input[type="number"]:focus {
+  text-align: center;
 }
 
 /* Placeholders */
@@ -166,13 +185,33 @@ header .feature {
 
 .content .form-group input:focus::placeholder {
   color: rgba(255, 242, 239, 0.658);
-  text-align: left;
+  text-align: center;
 }
 
-/* Guests Number input field */
-.content .form-group input[type="number"],
-.content .form-group input[type="number"]:focus {
-  text-align: center;
+/* Icons */
+.content form .form-group#location-group div,
+.content form .form-group#guests-number-group div { /* Location & Guests number icons*/
+  position: relative;
+}
+
+.content form .form-group#location-group div i,
+.content form .form-group#guests-number-group div i {
+  position: absolute;
+  top: calc(50% - 8.5px);
+  left: 10px;
+}
+
+.content .form-group input[type="date"]::-webkit-calendar-picker-indicator { /* Dates Icon */
+  position: absolute;
+  left: 0;
+  right: auto;
+  margin-left: 5px;
+  font-size: 1.1rem;
+}
+
+.content form #search-btn-container i { /* Search Button Icon */
+  color: #fff;
+  font-size: 90%;
 }
 
 /* Search Button */
@@ -246,7 +285,7 @@ header .feature {
   .navbar.menu-open ul li a.current {
     color: var(--light-primary-color);
   }
-  
+
   .navbar.menu-open ul li a:hover {
     background-color: var(--primary-color);
     color: #111;
@@ -320,7 +359,7 @@ header .feature {
     color: var(--light-primary-color);
   }
 
-  .navbar.menu-open ul li a:hover{
+  .navbar.menu-open ul li a:hover {
     background-color: var(--primary-color);
     color: #111;
   }
@@ -635,7 +674,6 @@ header .feature {
 
 /* Standard Tablet Screens */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-
   header .content {
     padding: 1rem;
     width: 100%;
@@ -733,7 +771,7 @@ header .feature {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (max-height:768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) and (max-height: 768px) {
   header .content {
     min-height: 100vh;
   }

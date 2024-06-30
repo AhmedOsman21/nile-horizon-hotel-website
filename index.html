@@ -64,45 +64,49 @@
           <form action="" method="get" class="room-search">
             <div class="form-group" id="location-group">
               <label for="location">Location</label>
-              <input
-                type="search"
-                name="location"
-                id="location"
-                placeholder="Location"
-                autocomplete="address-level2"
-              />
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <input
+                  type="search"
+                  name="location"
+                  id="location"
+                  placeholder="Location"
+                  autocomplete="address-level2"
+                />
+              </div>
             </div>
             <div class="form-group" id="check-in-group">
               <label for="check-in">Check in</label>
-              <input
-                type="date"
-                name="check_in"
-                id="check-in"
-              />
+              <div>
+                <input type="date" name="check_in" id="check-in" />
+              </div>
             </div>
             <div class="form-group" id="check-out-group">
               <label for="check-out">Check out</label>
-              <input
-                type="date"
-                name="check_out"
-                id="check-out"
-              />
+              <div>
+                <input type="date" name="check_out" id="check-out" />
+              </div>
             </div>
             <div class="form-group" id="guests-number-group">
               <label for="guests-number">People</label>
-              <input
-                type="number"
-                name="guests_number"
-                id="guests-number"
-                placeholder="Rooms for"
-                min="1"
-              />
+              <div>
+                <i class="fa-solid fa-user"></i>                <input
+                  type="number"
+                  name="guests_number"
+                  id="guests-number"
+                  placeholder="Rooms for"
+                  min="1"
+                />
+              </div>
             </div>
-            <input
+            
+              <button
               type="submit"
-              value="Search"
               class="btn btn-primary search-btn"
-            />
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+              Search</button>
+            
           </form>
         </div>
       </section>
