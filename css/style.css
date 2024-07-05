@@ -1,3 +1,15 @@
+/* Variables */
+:root {
+  --primary-color: #a55119;
+  --light-primary-color: #cc6b2a;
+  --dark-primary-color: #8f4b1d;
+  --dark-color: #333;
+  --gray: #444;
+  --light-gray: #666;
+  --light-color: #fff;
+  --smoke: #ddd;
+}
+
 /* CSS Reset */
 * {
   margin: 0;
