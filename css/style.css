@@ -112,6 +112,7 @@ nav {
   color: var(--gray);
   cursor: pointer;
   padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
 }
 
 /* Home Leading */
@@ -232,6 +233,33 @@ header .feature {
 }
 
 /* =============================== Media Queries =============================== */
+
+/* General */
+@media screen and (max-width: 768px) {
+  .navbar.menu-open .menu-icon {
+    transform: rotateX(180deg);
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .navbar.menu-open nav ul {
+    transition: all ease-in-out;
+    animation-name: menu;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    transform: translateX(70vw);
+  }
+
+  @keyframes menu {
+    to {
+      transform: initial;
+    }
+  }
+}
+
 
 /* ===== Navbar [Mini Screens] ===== */
 @media screen and (max-width: 359px) {
@@ -387,7 +415,7 @@ header .feature {
   }
 }
 
-/* ===== Navbar [Mobiles & Tablets] ===== */
+/* ===== Navbar [Larger Screens] ===== */
 @media screen and (min-width: 769px) and (max-width: 1100px) {
   .navbar {
     flex-wrap: wrap;
