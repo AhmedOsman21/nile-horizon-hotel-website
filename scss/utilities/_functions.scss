@@ -1,0 +1,19 @@
+@use "sass:math";
+
+// Convert px to rem
+@function rem($px-size) {
+  @if (math.is-unitless($px-size)) {
+    @return math.div($px-size, 16) + rem;
+  } @else {
+    @error "Size should be unitless!";
+  }
+}
+
+// Convert px to em
+@function em($px-size) {
+  @if (math.is-unitless($px-size)) {
+    @return math.div($px-size, 16) + em;
+  } @else {
+    @error "Size should be unitless!";
+  }
+}
