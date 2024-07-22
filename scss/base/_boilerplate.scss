@@ -8,7 +8,6 @@
 }
 
 html {
-  outline-color: crimson;
   box-sizing: border-box;
   font-size: 100%;
 }
@@ -19,6 +18,10 @@ body {
   font-family: u.$lato-font;
 }
 
+body * {
+  outline-color: crimson;
+}
+
 *,
 *::before,
 *::after {
@@ -26,5 +29,10 @@ body {
 }
 
 .container {
+  width: u.$max-width;
   max-width: u.$max-width;
+}
+
+ul {
+    padding-left: 0;
 }
