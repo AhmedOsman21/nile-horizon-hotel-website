@@ -1,0 +1,16 @@
+@use '../utilities/' as u;
+
+.btn {
+    border: none;
+    padding: 1em 3.5em;
+    background-color: u.$button-color;
+    color: u.$light-color;
+    border-radius: u.em(5);
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+    
+    &:hover,
+    &:focus {
+        background-color: u.$button-color-light;
+    }
+}
