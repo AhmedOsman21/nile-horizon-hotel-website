@@ -1,37 +1,56 @@
-@use '../utilities' as u;
+@use "../utilities" as u;
 
 .navbar__wrapper {
-    @extend %flex-horizontal-space;
-    padding-block: 1em;
-    margin-inline: 1.4em;
+  @extend %flex-horizontal-space;
 
-  .logo {
-    width: 10rem;
+  height: u.em(60);
+  margin-inline: 1.4em;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+.logo {
+  width: 11rem;
+}
+
+.navbar {
+  @extend %flex-horizontal-space;
+
+  flex-basis: 80%;
+  padding-inline: 1em;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
   }
 
-  .navbar {
-    @extend %flex-horizontal-space;
-    flex-basis: 80%;
-    padding-inline: 1em;
-    
+  &__item {
+    margin-right: 1.5rem;
+  }
 
-    &__list {
-      display: flex;
-      list-style: none;
+  &__link {
+    display: inline-block;
+    padding: 1em 0.5em;
+    border-bottom: 1px solid transparent;
+    text-align: center;
+    color: u.$heading-color;
+    transition: color 0.1s ease-in;
+
+    &:hover,
+    &:focus {
+      border-color: u.$button-color-light;
+      color: u.$button-color;
     }
 
-    &__item {
-        margin-right: 1.5em;
+    &__active {
+      color: u.$button-color;
     }
+  }
 
-    &__link {
-        font-size: 1.2rem;
-        text-decoration: none;
-        
-    }
-
-    &__btn {
-        
-    }
+  // Increasing specifity of this btn
+  &__btn.btn {
+    padding: 0.8em 4em;
+    white-space: nowrap;
   }
 }
