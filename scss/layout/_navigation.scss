@@ -19,6 +19,11 @@
   flex-basis: 80%;
   padding-inline: 1em;
 
+  // Hide Navigation on Mobiles
+  @include u.breakpoint("small") {
+    display: none;
+  }
+
   &__list {
     display: flex;
     list-style: none;
@@ -52,5 +57,46 @@
   &__btn.btn {
     padding: 0.8em 4em;
     white-space: nowrap;
+  }
+}
+
+
+.hamburger__btn {
+  display: flex;
+  align-items: center;
+  padding: 1em 0.8em;
+  cursor: pointer;
+
+  .hamburger__icon {
+    // Hide by default
+    display: none;
+  
+    // Show on smaller screens
+    @include u.breakpoint('small') {
+      display: inline-block;
+      width: 1.6em;
+      height: 2px;
+      background-color: #000;
+      position: relative;
+    
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+        right: 0;
+      }
+    
+      &::before {
+        top: -0.55em;
+      }
+      
+      &::after {
+        top: 0.55em;
+      }
+  
+    }
   }
 }
