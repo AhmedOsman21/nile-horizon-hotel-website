@@ -8,6 +8,8 @@ $button-color: hsl(24, 81%, 44%);
 $button-color-light: hsl(27, 78%, 49%);
 $text-color: hsl(0, 1%, 27%);
 $text-color-light: hsl(0, 0%, 95%);
+$expand-navbar-background: hsl(0, 2%, 11%);
+$light-grey: hsl(0, 0%, 60%);
 
 // Fonts
 $page-title-font: "primary-font", "Bitter", serif;
@@ -16,3 +18,6 @@ $lato-font: "Lato", System-ui, -apple-system, sans-serif;
 
 // Width
 $max-width: rem(1200);
+
+// Height
+$navbar-height: em(60);
