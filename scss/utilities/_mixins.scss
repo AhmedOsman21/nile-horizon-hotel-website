@@ -5,8 +5,8 @@ $breakpoints: (
   "x-small": em(576),
   "small": em(767.98),
   "medium": em(991.98),
-  "large": em(1199.98),
-  "x-large": em(1399.98)
+  "large": em(1200),
+  "x-large": em(1400)
 );
 
 @mixin breakpoint($screen-size) {
