@@ -2,12 +2,11 @@
 
 // Navbar container
 .navbar__wrapper {
-  @extend %flex-horizontal-space;
+  @include u.flex(space-between, center);
 
-  height: u.em(60);
-  margin-inline: 1.4em;
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
+  height: u.$navbar-height;
+  margin: auto;
+  padding: 0.4em 1.4em 0.2em;
 }
 
 // Logo
@@ -17,28 +16,51 @@
 
 // Navigation Menu
 .navbar {
-  @extend %flex-horizontal-space;
+  @include u.flex(space-between, center);
 
   flex-basis: 80%;
   padding-inline: 1em;
 
-  // Hide Navigation on Mobiles
   @include u.breakpoint("small") {
     display: none;
+    padding: u.$navbar-height;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: u.$expand-navbar-background;
+    width: 85%;
+    min-height: 100%;
+    max-height: 100svh;
+    // box-shadow: 0 0 0 20rem rgba($color: #000000, $alpha: 0.2);
   }
 
   &__list {
-    display: flex;
+    @include u.flex();
+
     list-style: none;
     margin: 0;
+    
+    @include u.breakpoint("small") {
+      width: 100%;
+      flex-direction: column;
+      margin-bottom: 1.5em;
+    }
   }
 
   &__item {
+    text-align: center;
     margin-right: 1.5rem;
+    
+    @include u.breakpoint("small") {
+      width: 100%;
+      margin: 0.5em;
+      font-size: clamp(1rem, 1.25rem, 1.3rem);
+    }
   }
 
   &__link {
     display: inline-block;
+    width: 100%;
     padding: 1em 0.5em;
     border-bottom: 1px solid transparent;
     text-align: center;
@@ -63,26 +85,43 @@
   }
 }
 
+// Backdrop on the navbar in small screens
+.blur {
+  @include u.breakpoint("small") {
+    @include u.flex(center, center, column);
+
+    background-color: rgba($color: #000000, $alpha: 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+  }
+}
+
 // Toggle menu button
 .hamburger__btn {
   display: none; // Hide by default
 
   @include u.breakpoint("small") {
-    display: flex;
-    align-items: center;
+    @include u.flex;
+
     padding: 1em 0.8em;
     background-color: transparent;
     border: none;
+    z-index: 1;
     cursor: pointer;
   }
 
   // Bars icon
   .hamburger__icon {
     display: inline-block;
-    width: 1.6em;
-    height: 2px;
-    background-color: #000;
+    width: 1.8em;
+    height: 3px;
+    background-color: #333;
     position: relative;
+    border-radius: 5px;
 
     // Top & bottom bars
     &::before,
@@ -91,8 +130,11 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: inherit;
+      background-color: #333;
       right: 0;
+      border-radius: inherit;
+      transform-origin: center;
+      transition: 0.2s linear;
     }
 
     &::before {
@@ -101,6 +143,27 @@
 
     &::after {
       top: 0.55em;
+    }
+  }
+
+  .hamburger__icon__active {
+    @include u.breakpoint("small") {
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        top: 0;
+        background-color: #666;
+        height: 2px;
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
     }
   }
 }

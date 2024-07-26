@@ -1,4 +1,24 @@
+@use 'utilities' as u;
 @forward "base";
 @forward "utilities";
 @forward "components";
 @forward "layout";
+
+.hero {
+  height: 100vh;
+  background-color: #bbd;
+}
+
+.hidden {
+  display: none;
+}
+
+.navbar__show {
+  @include u.flex(center, flex-start, column);
+
+  & .navbar__link {
+    @include u.breakpoint("small") {
+        color: u.$light-grey;
+    }
+  }
+}

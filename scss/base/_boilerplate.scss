@@ -29,8 +29,7 @@ body * {
 }
 
 .container {
-  width: u.$max-width;
-  max-width: u.$max-width;
+  width: min(100%, u.$max-width);
 }
 
 ul {
