@@ -56,8 +56,8 @@
     }
   }
 
-  // Increasing specifity of this btn
-  &__btn.btn {
+  //The navbar sign in btn
+  &__btn {
     padding: 0.8em 4em;
     white-space: nowrap;
   }
