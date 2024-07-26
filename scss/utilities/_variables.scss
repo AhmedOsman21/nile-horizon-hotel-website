@@ -1,7 +1,18 @@
+@use "functions" as *;
+
 // Colors
 $dark-color: hsl(0, 0%, 20%);
 $light-color: hsl(0, 0%, 100%);
 $heading-color: hsl(0, 0%, 41%);
-$buttons-color: hsl(22, 75%, 31%);
-$hover-color: hsl(33, 96%, 48%);
-$light-text-color: hsl(0, 0%, 95%);
+$button-color: hsl(24, 81%, 44%);
+$button-color-light: hsl(27, 78%, 49%);
+$text-color: hsl(0, 1%, 27%);
+$text-color-light: hsl(0, 0%, 95%);
+
+// Fonts
+$page-title-font: "primary-font", "Bitter", serif;
+$section-title-font: "Bitter", serif;
+$lato-font: "Lato", System-ui, -apple-system, sans-serif;
+
+// Width
+$max-width: rem(1200);
