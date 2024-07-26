@@ -14,3 +14,20 @@ $breakpoints: (
     @content;
   }
 }
+
+/// Make a flex container
+/// @param $horizontal - Horizontal alignment of items
+/// @param $vertical - Vertical aligment of items
+/// @param $direction - Flex direction
+/// @output 'display', 'flex-direction','justify-content' and 'align-items'
+@mixin flex($horizontal: center, $vertical: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  @if $direction == row or $direction == row-reverse {
+    justify-content: $horizontal;
+    align-items: $vertical;
+  } @else {
+    justify-content: $vertical;
+    align-items: $horizontal;
+  }
+}
