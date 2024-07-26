@@ -1,5 +1,6 @@
 @use "../utilities" as u;
 
+// Navbar container
 .navbar__wrapper {
   @extend %flex-horizontal-space;
 
@@ -9,10 +10,12 @@
   padding-bottom: 0.2em;
 }
 
+// Logo
 .logo {
   width: 11rem;
 }
 
+// Navigation Menu
 .navbar {
   @extend %flex-horizontal-space;
 
@@ -60,43 +63,42 @@
   }
 }
 
-
+// Toggle menu button
 .hamburger__btn {
-  display: flex;
-  align-items: center;
-  padding: 1em 0.8em;
-  cursor: pointer;
+  display: none; // Hide by default
 
+  @include u.breakpoint("small") {
+    display: flex;
+    align-items: center;
+    padding: 1em 0.8em;
+    cursor: pointer;
+  }
+
+  // Bars icon
   .hamburger__icon {
-    // Hide by default
-    display: none;
-  
-    // Show on smaller screens
-    @include u.breakpoint('small') {
-      display: inline-block;
-      width: 1.6em;
-      height: 2px;
-      background-color: #000;
-      position: relative;
-    
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: inherit;
-        right: 0;
-      }
-    
-      &::before {
-        top: -0.55em;
-      }
-      
-      &::after {
-        top: 0.55em;
-      }
-  
+    display: inline-block;
+    width: 1.6em;
+    height: 2px;
+    background-color: #000;
+    position: relative;
+
+    // Top & bottom bars
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      right: 0;
+    }
+
+    &::before {
+      top: -0.55em;
+    }
+
+    &::after {
+      top: 0.55em;
     }
   }
 }
