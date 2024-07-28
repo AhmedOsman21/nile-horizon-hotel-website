@@ -4,6 +4,7 @@
 @forward "components";
 @forward "layout";
 
+// Hero Section
 .hero {
   height: calc(100vh - u.$navbar-height);
   width: 100%;
@@ -20,10 +21,12 @@
   }
 }
 
+// Hide
 .hidden {
   display: none;
 }
 
+// Navbar settings on small screens
 .navbar__show {
   @include u.flex(center, flex-start, column);
 
