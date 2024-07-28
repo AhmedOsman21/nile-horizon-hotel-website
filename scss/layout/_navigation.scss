@@ -7,6 +7,20 @@
   height: u.$navbar-height;
   margin: auto;
   padding: 0.4em 1.4em 0.2em;
+  
+  // Medium Screens
+  @include u.breakpoint("medium") {
+    height: u.em(100);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  // Reset on small screen
+  @include u.breakpoint('small') {
+    height: u.$navbar-height;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+  }
 }
 
 // Logo
@@ -21,6 +35,14 @@
   flex-basis: 80%;
   padding-inline: 1em;
 
+
+  // Medium Screens
+  @include u.breakpoint("medium") {
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+
+  // Small Screens
   @include u.breakpoint("small") {
     display: none;
     padding: 2.5em 0;
@@ -41,7 +63,7 @@
 
     list-style: none;
     margin: 0;
-    
+
     @include u.breakpoint("small") {
       width: 100%;
       flex-direction: column;
@@ -51,12 +73,18 @@
 
   &__item {
     text-align: center;
-    margin-right: 1.5rem;
+    margin-right: 1.5em;
     
+    // Medium Screens
+    @include u.breakpoint("medium") {
+      margin-right: 1.2em;
+    }
+    
+    // Small Screens
     @include u.breakpoint("small") {
+      font-size: clamp(0.9rem, 1rem, 1.1rem);
       width: 100%;
       margin: 0.5em;
-      font-size: clamp(0.9rem, 1rem, 1.1rem);
     }
   }
 
@@ -84,6 +112,11 @@
   &__btn {
     padding: 0.8em 4em;
     white-space: nowrap;
+
+    // Medium Screens
+    @include u.breakpoint("medium") {
+      padding: 0.6em 3em;
+    }
   }
 }
 
