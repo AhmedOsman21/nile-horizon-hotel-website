@@ -8,6 +8,16 @@
   height: calc(100vh - u.$navbar-height);
   width: 100%;
   background: url('../images/hero.png') no-repeat center center/cover;
+
+  // Medium Screens
+  @include u.breakpoint("medium") {
+    height: calc(100vh - u.$rows-navbar-height);
+  }
+
+  // Small Screens
+  @include u.breakpoint("small") {
+    height: calc(100vh - u.$navbar-height);
+  }
 }
 
 .hidden {

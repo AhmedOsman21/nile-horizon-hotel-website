@@ -10,7 +10,7 @@
   
   // Medium Screens
   @include u.breakpoint("medium") {
-    height: u.em(100);
+    height: u.$rows-navbar-height;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -64,6 +64,7 @@
     list-style: none;
     margin: 0;
 
+    // Small Screens
     @include u.breakpoint("small") {
       width: 100%;
       flex-direction: column;

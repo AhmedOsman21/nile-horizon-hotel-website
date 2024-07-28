@@ -582,6 +582,16 @@ ul {
   width: 100%;
   background: url("../images/hero.png") no-repeat center center/cover;
 }
+@media (max-width: 68.74875em) {
+  .hero {
+    height: calc(100vh - 6.25em);
+  }
+}
+@media (max-width: 47.99875em) {
+  .hero {
+    height: calc(100vh - 3.75em);
+  }
+}
 
 .hidden {
   display: none;
