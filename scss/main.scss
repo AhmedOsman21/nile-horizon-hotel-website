@@ -21,4 +21,8 @@
         color: u.$light-grey;
     }
   }
+
+  .navbar__link__active {
+    color: u.$button-color;
+  }
 }
