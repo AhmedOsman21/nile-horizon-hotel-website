@@ -411,14 +411,17 @@ ul {
 @media (max-width: 47.99875em) {
   .navbar {
     display: none;
-    padding: 3.75em;
+    padding: 2.5em 0;
     position: absolute;
     top: 0;
     right: 0;
-    background-color: hsl(0, 2%, 11%);
+    background-color: hsla(0, 2%, 11%, 0.85);
+    backdrop-filter: blur(4px);
     width: 85%;
     min-height: 100%;
-    max-height: 100svh;
+    max-height: 100vh;
+    overflow: auto;
+    box-shadow: 0 0 5em 1em rgba(0, 0, 0, 0.5);
   }
 }
 .navbar__list {
@@ -444,7 +447,7 @@ ul {
   .navbar__item {
     width: 100%;
     margin: 0.5em;
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
 .navbar__link {
@@ -460,8 +463,10 @@ ul {
   border-color: hsl(27, 78%, 49%);
   color: hsl(24, 81%, 44%);
 }
-.navbar__link__active {
-  color: hsl(24, 81%, 44%);
+@media (max-width: 47.99875em) {
+  .navbar__link:hover, .navbar__link:focus {
+    border-color: transparent;
+  }
 }
 .navbar__btn {
   padding: 0.8em 4em;
@@ -543,8 +548,9 @@ ul {
 }
 
 .hero {
-  height: 100vh;
-  background-color: #bbd;
+  height: calc(100vh - 3.75em);
+  width: 100%;
+  background: url("../images/hero.png") no-repeat center center/cover;
 }
 
 .hidden {
@@ -561,6 +567,9 @@ ul {
   .navbar__show .navbar__link {
     color: hsl(0, 0%, 60%);
   }
+}
+.navbar__show .navbar__link__active {
+  color: hsl(24, 81%, 44%);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,8 +5,9 @@
 @forward "layout";
 
 .hero {
-  height: 100vh;
-  background-color: #bbd;
+  height: calc(100vh - u.$navbar-height);
+  width: 100%;
+  background: url('../images/hero.png') no-repeat center center/cover;
 }
 
 .hidden {
