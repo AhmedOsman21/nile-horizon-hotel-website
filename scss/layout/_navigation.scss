@@ -71,10 +71,10 @@
     &:focus {
       border-color: u.$button-color-light;
       color: u.$button-color;
-    }
 
-    &__active {
-      color: u.$button-color;
+      @include u.breakpoint("small") {
+        border-color: transparent;
+      }
     }
   }
 
