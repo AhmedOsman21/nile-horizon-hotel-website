@@ -41,3 +41,112 @@ ul {
 .hidden {
   display: none;
 }
+
+// Padding
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.p-4 {
+  padding: 4rem;
+}
+.py-5 {
+  padding: 5rem;
+}
+
+// Top & Bottom Padding
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.py-4 {
+  padding: 4rem 0;
+}
+.py-5 {
+  padding: 5rem 0;
+}
+
+// Inline Padding
+.px-1 {
+  padding-inline: 1rem;
+}
+.px-2 {
+  padding-inline: 2rem;
+}
+.px-3 {
+  padding-inline: 3rem;
+}
+.px-4 {
+  padding-inline: 4rem;
+}
+.px-5 {
+  padding-inline: 5rem;
+}
+
+// Margin
+.m-auto {
+  margin: auto;
+}
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 2rem;
+}
+.m-3 {
+  margin: 3rem;
+}
+.m-4 {
+  margin: 4rem;
+}
+.m-5 {
+  margin: 5rem;
+}
+
+// Top & Bottom Margin
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-3 {
+  margin: 3rem 0;
+}
+.my-4 {
+  margin: 4rem 0;
+}
+.my-5 {
+  margin: 5rem 0;
+}
+
+
+// Inline Margin
+.mx-auto {
+  margin-inline: auto;
+}
+.mx-1 {
+  margin-inline: 1rem;
+}
+.mx-2 {
+  margin-inline: 2rem;
+}
+.mx-3 {
+  margin-inline: 3rem;
+}
+.mx-4 {
+  margin-inline: 4rem;
+}
+.mx-5 {
+  margin-inline: 5rem;
+}
