@@ -35,6 +35,7 @@ ul {
 // Container Width
 .container {
   width: min(100%, u.$max-width);
+  margin-inline: auto;
 }
 
 // Hide
@@ -129,7 +130,6 @@ ul {
 .my-5 {
   margin: 5rem 0;
 }
-
 
 // Inline Margin
 .mx-auto {

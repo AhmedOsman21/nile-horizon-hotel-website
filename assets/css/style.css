@@ -371,6 +371,7 @@ ul {
 
 .container {
   width: min(100%, 75rem);
+  margin-inline: auto;
 }
 
 .hidden {
