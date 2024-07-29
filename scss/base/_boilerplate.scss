@@ -28,10 +28,16 @@ body * {
   box-sizing: inherit;
 }
 
+ul {
+  padding-left: 0;
+}
+
+// Container Width
 .container {
   width: min(100%, u.$max-width);
 }
 
-ul {
-    padding-left: 0;
+// Hide
+.hidden {
+  display: none;
 }

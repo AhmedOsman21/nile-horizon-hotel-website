@@ -33,8 +33,6 @@
   @include u.flex(space-between, center);
 
   flex-basis: 80%;
-  padding-inline: 1em;
-
 
   // Medium Screens
   @include u.breakpoint("medium") {
