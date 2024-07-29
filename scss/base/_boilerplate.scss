@@ -36,6 +36,16 @@ ul {
 .container {
   width: min(100%, u.$max-width);
   margin-inline: auto;
+
+  // Large Screens
+  @include u.breakpoint("large") {
+    padding-inline: 2em;
+  }
+
+  // Medium Screens
+  @include u.breakpoint("medium") {
+    padding-inline: 1.2em;
+  }
 }
 
 // Hide

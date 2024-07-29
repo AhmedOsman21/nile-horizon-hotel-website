@@ -1,4 +1,4 @@
-@use 'utilities' as u;
+@use "utilities" as u;
 @forward "base";
 @forward "components";
 @forward "utilities";
@@ -8,7 +8,7 @@
 .hero {
   height: calc(100vh - u.$navbar-height);
   width: 100%;
-  background: url('../images/hero.png') no-repeat center center/cover;
+  background: url("../images/hero.png") no-repeat center center/cover;
   background-color: hsla(0, 0%, 0%, 0.685);
   background-blend-mode: darken;
 
@@ -29,11 +29,21 @@
 
   & .navbar__link {
     @include u.breakpoint("small") {
-        color: u.$light-grey;
+      color: u.$light-grey;
+
+      &:hover {
+        color: u.$main-color-light;
+      }
     }
   }
 
   .navbar__link__active {
-    color: u.$button-color;
+    font-weight: bold;
+    color: u.$main-color;
   }
+}
+
+// Active Navbar Link
+a.navbar__link__active {
+  color: u.$main-color;
 }

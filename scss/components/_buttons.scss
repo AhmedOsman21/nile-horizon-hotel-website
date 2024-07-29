@@ -3,7 +3,7 @@
 .btn {
     border: none;
     padding: 1em 3.5em;
-    background-color: u.$button-color;
+    background-color: u.$main-color;
     color: u.$light-color;
     border-radius: u.em(5);
     cursor: pointer;
@@ -11,6 +11,6 @@
     
     &:hover,
     &:focus {
-        background-color: u.$button-color-light;
+        background-color: u.$main-color-light;
     }
 }

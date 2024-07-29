@@ -6,19 +6,25 @@
 
   height: u.$navbar-height;
   margin: auto;
-  padding: 0.4em 1.4em 0.2em;
+  padding: 0.4em 0 0.2em;
+
+  // Large Screens
+  @include u.breakpoint("large") {
+    padding-inline: 2em;
+  }
   
   // Medium Screens
   @include u.breakpoint("medium") {
     height: u.$rows-navbar-height;
     flex-wrap: wrap;
     justify-content: center;
+    padding-inline: 1.2em;
   }
   
   // Reset on small screen
   @include u.breakpoint('small') {
     height: u.$navbar-height;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
   }
 }
@@ -90,16 +96,21 @@
   &__link {
     display: inline-block;
     width: 100%;
-    padding: 1em 0.5em;
-    border-bottom: 1px solid transparent;
+    padding: 1.2em 0.5em;
+    border-bottom: 2px solid transparent;
     text-align: center;
-    color: u.$heading-color;
+    color: u.$light-grey;
     transition: color 0.1s ease-in;
+
+    @include u.breakpoint("medium") {
+      padding-bottom: 1em;
+      border-width: 1px;
+    }
 
     &:hover,
     &:focus {
-      border-color: u.$button-color-light;
-      color: u.$button-color;
+      border-color: u.$main-color-light;
+      color: u.$main-color;
 
       @include u.breakpoint("small") {
         border-color: transparent;

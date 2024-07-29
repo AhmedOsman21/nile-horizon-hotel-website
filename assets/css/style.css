@@ -335,7 +335,7 @@ a:active {
 
 a:hover,
 a:focus {
-  color: hsl(27, 78%, 49%);
+  color: hsl(22, 84%, 37%);
 }
 
 @font-face {
@@ -372,6 +372,16 @@ ul {
 .container {
   width: min(100%, 75rem);
   margin-inline: auto;
+}
+@media (max-width: 78.75em) {
+  .container {
+    padding-inline: 2em;
+  }
+}
+@media (max-width: 68.74875em) {
+  .container {
+    padding-inline: 1.2em;
+  }
 }
 
 .hidden {
@@ -509,14 +519,14 @@ ul {
 .btn {
   border: none;
   padding: 1em 3.5em;
-  background-color: hsl(24, 81%, 44%);
+  background-color: hsl(22, 75%, 31%);
   color: hsl(0, 0%, 100%);
   border-radius: 0.3125em;
   cursor: pointer;
   transition: all 0.4s ease-out;
 }
 .btn:hover, .btn:focus {
-  background-color: hsl(27, 78%, 49%);
+  background-color: hsl(22, 84%, 37%);
 }
 
 .navbar__wrapper {
@@ -526,19 +536,25 @@ ul {
   align-items: center;
   height: 3.75em;
   margin: auto;
-  padding: 0.4em 1.4em 0.2em;
+  padding: 0.4em 0 0.2em;
+}
+@media (max-width: 78.75em) {
+  .navbar__wrapper {
+    padding-inline: 2em;
+  }
 }
 @media (max-width: 68.74875em) {
   .navbar__wrapper {
     height: 6.25em;
     flex-wrap: wrap;
     justify-content: center;
+    padding-inline: 1.2em;
   }
 }
 @media (max-width: 47.99875em) {
   .navbar__wrapper {
     height: 3.75em;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
   }
 }
@@ -610,15 +626,21 @@ ul {
 .navbar__link {
   display: inline-block;
   width: 100%;
-  padding: 1em 0.5em;
-  border-bottom: 1px solid transparent;
+  padding: 1.2em 0.5em;
+  border-bottom: 2px solid transparent;
   text-align: center;
-  color: hsl(0, 0%, 41%);
+  color: hsl(0, 0%, 60%);
   transition: color 0.1s ease-in;
 }
+@media (max-width: 68.74875em) {
+  .navbar__link {
+    padding-bottom: 1em;
+    border-width: 1px;
+  }
+}
 .navbar__link:hover, .navbar__link:focus {
-  border-color: hsl(27, 78%, 49%);
-  color: hsl(24, 81%, 44%);
+  border-color: hsl(22, 84%, 37%);
+  color: hsl(22, 75%, 31%);
 }
 @media (max-width: 47.99875em) {
   .navbar__link:hover, .navbar__link:focus {
@@ -737,9 +759,17 @@ ul {
   .navbar__show .navbar__link {
     color: hsl(0, 0%, 60%);
   }
+  .navbar__show .navbar__link:hover {
+    color: hsl(22, 84%, 37%);
+  }
 }
 .navbar__show .navbar__link__active {
-  color: hsl(24, 81%, 44%);
+  font-weight: bold;
+  color: hsl(22, 75%, 31%);
+}
+
+a.navbar__link__active {
+  color: hsl(22, 75%, 31%);
 }
 
 /*# sourceMappingURL=style.css.map */
