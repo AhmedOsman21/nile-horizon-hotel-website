@@ -88,8 +88,9 @@
     // Small Screens
     @include u.breakpoint("small") {
       font-size: clamp(0.9rem, 1rem, 1.1rem);
-      width: 100%;
+      width: 80%;
       margin: 0.5em;
+      margin-top: 1.5em;
     }
   }
 
