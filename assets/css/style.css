@@ -357,7 +357,7 @@ body {
 }
 
 body * {
-  outline-color: crimson;
+  outline-color: hsl(22, 75%, 31%);
 }
 
 *,
