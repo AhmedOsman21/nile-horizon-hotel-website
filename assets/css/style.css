@@ -564,7 +564,7 @@ ul {
   width: 11rem;
 }
 
-.navbar {
+.navbar, .navbar__collapse {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -572,13 +572,13 @@ ul {
   flex-basis: 80%;
 }
 @media (max-width: 68.74875em) {
-  .navbar {
+  .navbar, .navbar__collapse {
     flex-basis: 100%;
     justify-content: space-between;
   }
 }
 @media (max-width: 47.99875em) {
-  .navbar {
+  .navbar, .navbar__collapse {
     display: none;
     padding: 2.5em 0;
     position: absolute;
@@ -592,20 +592,20 @@ ul {
     overflow: auto;
     box-shadow: 0 0 2em 0.5em rgba(0, 0, 0, 0.5);
     transform: translateX(100%);
-    animation: right-slide 0.2s linear forwards;
+    animation: slide-in-right 0.2s linear forwards;
   }
 }
 @media (max-width: 36em) {
-  .navbar {
+  .navbar, .navbar__collapse {
     width: 80%;
   }
 }
-@keyframes right-slide {
+@keyframes slide-in-right {
   100% {
     transform: translateX(0);
   }
 }
-.navbar__list {
+.navbar__list, .navbar__collapse__list {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -614,30 +614,30 @@ ul {
   margin: 0;
 }
 @media (max-width: 47.99875em) {
-  .navbar__list {
+  .navbar__list, .navbar__collapse__list {
     width: 100%;
     flex-direction: column;
     margin-bottom: 1.5em;
   }
 }
-.navbar__item {
+.navbar__item, .navbar__collapse__item {
   text-align: center;
   margin-right: 1.5em;
 }
 @media (max-width: 68.74875em) {
-  .navbar__item {
+  .navbar__item, .navbar__collapse__item {
     margin-right: 1.2em;
   }
 }
 @media (max-width: 47.99875em) {
-  .navbar__item {
+  .navbar__item, .navbar__collapse__item {
     font-size: 1rem;
     width: 80%;
     margin: 0.5em;
     margin-top: 1.5em;
   }
 }
-.navbar__link {
+.navbar__link, .navbar__collapse__link {
   display: inline-block;
   width: 100%;
   padding: 1.2em 0.5em;
@@ -647,26 +647,26 @@ ul {
   transition: color 0.1s ease-in;
 }
 @media (max-width: 68.74875em) {
-  .navbar__link {
+  .navbar__link, .navbar__collapse__link {
     padding-bottom: 1em;
     border-width: 1px;
   }
 }
-.navbar__link:hover, .navbar__link:focus {
+.navbar__link:hover, .navbar__link:focus, .navbar__collapse__link:hover, .navbar__collapse__link:focus {
   border-color: hsl(22, 84%, 37%);
   color: hsl(22, 75%, 31%);
 }
 @media (max-width: 47.99875em) {
-  .navbar__link:hover, .navbar__link:focus {
+  .navbar__link:hover, .navbar__link:focus, .navbar__collapse__link:hover, .navbar__collapse__link:focus {
     border-color: transparent;
   }
 }
-.navbar__btn {
+.navbar__btn, .navbar__collapse__btn {
   padding: 0.8em 4em;
   white-space: nowrap;
 }
 @media (max-width: 68.74875em) {
-  .navbar__btn {
+  .navbar__btn, .navbar__collapse__btn {
     padding: 0.6em 3em;
   }
 }
@@ -750,6 +750,45 @@ ul {
   }
 }
 
+.expand__navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 47.99875em) {
+  .expand__navbar .navbar__link {
+    color: hsl(0, 0%, 60%);
+  }
+  .expand__navbar .navbar__link:hover {
+    color: hsl(22, 84%, 37%);
+  }
+}
+.expand__navbar .navbar__link__active {
+  font-weight: bold;
+  color: hsl(22, 75%, 31%);
+}
+
+@media (max-width: 47.99875em) {
+  .collapse__navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    animation: slide-out-right 0.2s linear forwards;
+    transform: translateX(0);
+  }
+  @keyframes slide-out-right {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+a.navbar__link__active {
+  color: hsl(22, 75%, 31%);
+}
+
 .hero {
   height: calc(100vh - 3.75em);
   width: 100%;
@@ -766,29 +805,6 @@ ul {
   .hero {
     height: calc(100vh - 3.75em);
   }
-}
-
-.navbar__show {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-@media (max-width: 47.99875em) {
-  .navbar__show .navbar__link {
-    color: hsl(0, 0%, 60%);
-  }
-  .navbar__show .navbar__link:hover {
-    color: hsl(22, 84%, 37%);
-  }
-}
-.navbar__show .navbar__link__active {
-  font-weight: bold;
-  color: hsl(22, 75%, 31%);
-}
-
-a.navbar__link__active {
-  color: hsl(22, 75%, 31%);
 }
 
 /*# sourceMappingURL=style.css.map */

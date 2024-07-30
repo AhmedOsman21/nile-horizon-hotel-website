@@ -35,7 +35,7 @@
 }
 
 // Navigation Menu
-.navbar {
+.navbar, .navbar__collapse {
   @include u.flex(space-between, center);
 
   flex-basis: 80%;
@@ -45,7 +45,7 @@
     flex-basis: 100%;
     justify-content: space-between;
   }
-
+  
   // Small Screens
   @include u.breakpoint("small") {
     display: none;
@@ -61,7 +61,7 @@
     overflow: auto;
     box-shadow: 0 0 2em 0.5em rgba($color: #000000, $alpha: 0.5);
     transform: translateX(100%);
-    animation: right-slide 0.2s linear forwards;
+    animation: slide-in-right 0.2s linear forwards;
   }
 
   @include u.breakpoint("x-small") {
@@ -69,7 +69,7 @@
   }
 
   // Navbar Animation on small screens
-  @keyframes right-slide {
+  @keyframes slide-in-right {
     100% {
       transform: translateX(0);
     }
@@ -232,4 +232,46 @@
       }
     }
   }
+}
+
+// Navbar settings when expanding on small screens
+.expand__navbar {
+  @include u.flex(center, flex-start, column);
+
+  & .navbar__link {
+    @include u.breakpoint("small") {
+      color: u.$light-grey;
+
+      &:hover {
+        color: u.$main-color-light;
+      }
+    }
+  }
+
+  .navbar__link__active {
+    font-weight: bold;
+    color: u.$main-color;
+  }
+}
+
+// Animation on navbar collapse on small screens
+.collapse__navbar {
+  @include u.breakpoint("small") {
+    @include u.flex(center, flex-start, column);
+
+    animation: slide-out-right 0.2s linear forwards;
+    transform: translateX(0);
+  
+    // Navbar Animation
+    @keyframes slide-out-right {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  }
+}
+
+// Active Navbar Link
+a.navbar__link__active {
+  color: u.$main-color;
 }
