@@ -597,7 +597,7 @@ ul {
 }
 @media (max-width: 36em) {
   .navbar {
-    width: 85%;
+    width: 80%;
   }
 }
 @keyframes right-slide {
