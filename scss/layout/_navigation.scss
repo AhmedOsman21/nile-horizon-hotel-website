@@ -12,7 +12,7 @@
   @include u.breakpoint("large") {
     padding-inline: 2em;
   }
-  
+
   // Medium Screens
   @include u.breakpoint("medium") {
     height: u.$rows-navbar-height;
@@ -20,9 +20,9 @@
     justify-content: center;
     padding-inline: 1.2em;
   }
-  
+
   // Reset on small screen
-  @include u.breakpoint('small') {
+  @include u.breakpoint("small") {
     height: u.$navbar-height;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -60,10 +60,19 @@
     max-height: 100vh;
     overflow: auto;
     box-shadow: 0 0 5em 1em rgba($color: #000000, $alpha: 0.5);
+    transform: translateX(100%);
+    animation: right-slide 0.2s linear forwards;
   }
 
   @include u.breakpoint("x-small") {
     width: 85%;
+  }
+
+  // Navbar Animation on small screens
+  @keyframes right-slide {
+    100% {
+      transform: translateX(0);
+    }
   }
 
   &__list {
@@ -83,12 +92,12 @@
   &__item {
     text-align: center;
     margin-right: 1.5em;
-    
+
     // Medium Screens
     @include u.breakpoint("medium") {
       margin-right: 1.2em;
     }
-    
+
     // Small Screens
     @include u.breakpoint("small") {
       font-size: clamp(0.9rem, 1rem, 1.1rem);
@@ -140,13 +149,20 @@
   @include u.breakpoint("small") {
     @include u.flex(center, center, column);
 
-    background-color: rgba($color: #000000, $alpha: 0.75);
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(4px);
+    animation: blur-dark 0.2s 0.1s linear forwards;
+  }
+
+  // Animation for the blur
+  @keyframes blur-dark {
+    100% {
+      background-color: rgba($color: #000000, $alpha: 0.55);
+      backdrop-filter: blur(4px);
+    }
   }
 }
 

@@ -353,6 +353,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", System-ui, -apple-system, sans-serif;
+  overflow: hidden;
 }
 
 body * {
@@ -590,11 +591,18 @@ ul {
     max-height: 100vh;
     overflow: auto;
     box-shadow: 0 0 5em 1em rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    animation: right-slide 0.2s linear forwards;
   }
 }
 @media (max-width: 36em) {
   .navbar {
     width: 85%;
+  }
+}
+@keyframes right-slide {
+  100% {
+    transform: translateX(0);
   }
 }
 .navbar__list {
@@ -669,12 +677,17 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.75);
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    animation: blur-dark 0.2s 0.1s linear forwards;
+  }
+}
+@keyframes blur-dark {
+  100% {
+    background-color: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(4px);
   }
 }
