@@ -23,27 +23,8 @@
   }
 }
 
-// Navbar settings on small screens
-.navbar__show {
-  @include u.flex(center, flex-start, column);
 
-  & .navbar__link {
-    @include u.breakpoint("small") {
-      color: u.$light-grey;
 
-      &:hover {
-        color: u.$main-color-light;
-      }
-    }
-  }
 
-  .navbar__link__active {
-    font-weight: bold;
-    color: u.$main-color;
-  }
-}
 
-// Active Navbar Link
-a.navbar__link__active {
-  color: u.$main-color;
-}
+
