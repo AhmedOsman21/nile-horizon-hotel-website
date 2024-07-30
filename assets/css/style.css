@@ -682,10 +682,14 @@ ul {
     left: 0;
     height: 100%;
     width: 100%;
-    animation: blur-dark 0.2s 0.1s linear forwards;
+    animation: blur-dark 0.2s linear forwards;
   }
 }
 @keyframes blur-dark {
+  0% {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1px);
+  }
   100% {
     background-color: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(3px);
@@ -780,6 +784,7 @@ ul {
   }
   @keyframes slide-out-right {
     100% {
+      display: none;
       transform: translateX(100%);
     }
   }

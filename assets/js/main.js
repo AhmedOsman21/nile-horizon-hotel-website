@@ -49,7 +49,5 @@ navbarBackdrop.addEventListener("click", toggleNavbar);
 document.body.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         hideNavbar();
-        // Remove focus state from the button
-        expandNavbarBtn.blur();
     }
 });
