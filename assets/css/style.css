@@ -314,14 +314,6 @@ h3 {
   margin-top: 0;
 }
 
-.page-title {
-  font-family: "primary-font", "Bitter", serif;
-}
-
-.section-title {
-  font-family: "Bitter", serif;
-}
-
 p {
   margin-top: 0;
 }
@@ -336,6 +328,26 @@ a:active {
 a:hover,
 a:focus {
   color: hsl(22, 84%, 37%);
+}
+
+.page-title {
+  font-family: "primary-font", "Bitter", Georgia, Garamond, serif;
+  font-weight: 800;
+  letter-spacing: 5px;
+  word-spacing: -10px;
+  font-size: 2rem;
+  font-style: italic;
+  color: hsl(0, 0%, 100%);
+  text-shadow: -2px 4px 4px #222;
+  margin-top: 2.5rem;
+}
+
+.section-title {
+  font-family: "Bitter", "Genos", Georgia, Garamond, serif;
+}
+
+.text-center {
+  text-align: center;
 }
 
 @font-face {

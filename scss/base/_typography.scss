@@ -8,14 +8,6 @@ h3 {
   margin-top: 0;
 }
 
-.page-title {
-  font-family: u.$page-title-font;
-}
-
-.section-title {
-  font-family: u.$section-title-font;
-}
-
 p {
   margin-top: 0;
 }
@@ -30,4 +22,23 @@ a:active {
 a:hover,
 a:focus {
   color: u.$main-color-light;
+}
+
+
+.page-title {
+  font-family: u.$page-title-font;
+  @include u.primaryFont;
+  font-size: 2rem;
+  font-style: italic;
+  color: u.$light-color;
+  text-shadow: -2px 4px 4px #222;
+  margin-top: 2.5rem;
+}
+
+.section-title {
+  font-family: u.$section-title-font;
+}
+
+.text-center {
+  text-align: center;
 }

@@ -31,3 +31,10 @@ $breakpoints: (
     align-items: $horizontal;
   }
 }
+
+// The font used for page title needs configurations to be shown good
+@mixin primaryFont() {
+  font-weight: 800;
+  letter-spacing: 5px;
+  word-spacing: -10px;
+}
