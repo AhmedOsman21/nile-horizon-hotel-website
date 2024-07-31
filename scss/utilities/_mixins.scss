@@ -9,6 +9,15 @@ $breakpoints: (
   "x-large": em(1400)
 );
 
+$down-breakpoints: (
+  "x-small": em(250),
+  "small": em(576),
+  "medium": em(768),
+  "large": em(1100),
+  "x-large": em(1260),
+  "xx-large": em(1400)
+);
+
 // Breakpoint for max-width
 @mixin breakpoint($screen-size) {
   @media (max-width: map-get($breakpoints, $screen-size)) {
@@ -18,7 +27,7 @@ $breakpoints: (
 
 // Breakpoint for min-width
 @mixin breakpoint-down($screen-size) {
-  @media (min-width: map-get($breakpoints, $screen-size)) {
+  @media (min-width: map-get($down-breakpoints, $screen-size)) {
     @content;
   }
 }
@@ -43,6 +52,6 @@ $breakpoints: (
 // The font used for page title needs configurations to be shown good
 @mixin primaryFont() {
   font-weight: 800;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   word-spacing: -10px;
 }
