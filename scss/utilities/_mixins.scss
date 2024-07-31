@@ -9,8 +9,16 @@ $breakpoints: (
   "x-large": em(1400)
 );
 
+// Breakpoint for max-width
 @mixin breakpoint($screen-size) {
   @media (max-width: map-get($breakpoints, $screen-size)) {
+    @content;
+  }
+}
+
+// Breakpoint for min-width
+@mixin breakpoint-down($screen-size) {
+  @media (min-width: map-get($breakpoints, $screen-size)) {
     @content;
   }
 }
