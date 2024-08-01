@@ -333,10 +333,9 @@ a:focus {
 .page-title {
   font-family: "primary-font", "Bitter", Georgia, Garamond, serif;
   font-weight: 800;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   word-spacing: -10px;
   font-size: 2rem;
-  font-style: italic;
   color: hsl(0, 0%, 100%);
   text-shadow: -2px 4px 4px #222;
   margin-top: 2.5rem;
@@ -365,7 +364,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", System-ui, -apple-system, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body * {
@@ -596,10 +595,10 @@ ul {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: hsla(0, 2%, 11%, 0.85);
+    background-color: hsla(0, 3%, 6%, 0.932);
     backdrop-filter: blur(4px);
     width: 65%;
-    min-height: 100%;
+    min-height: 100vh;
     max-height: 100vh;
     overflow: auto;
     box-shadow: 0 0 2em 0.5em rgba(0, 0, 0, 0.5);
@@ -692,7 +691,8 @@ ul {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
+    height: 100dvh;
     width: 100%;
     animation: blur-dark 0.2s linear forwards;
   }
@@ -703,7 +703,7 @@ ul {
     backdrop-filter: blur(1px);
   }
   100% {
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(3px);
   }
 }
@@ -806,7 +806,15 @@ a.navbar__link__active {
   color: hsl(22, 75%, 31%);
 }
 
+.form--showcase {
+  display: grid;
+  grid-template-areas: "location" "check-in" "check-out" "adults";
+}
 .hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   height: calc(100vh - 3.75em);
   width: 100%;
   background: url("../images/hero.png") no-repeat center center/cover;
@@ -822,6 +830,19 @@ a.navbar__link__active {
   .hero {
     height: calc(100vh - 3.75em);
   }
+}
+.hero .showcase__box {
+  background-color: rgba(102, 94, 94, 0.35);
+  backdrop-filter: blur(2px);
+  border-radius: 1rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0.2em rgba(0, 0, 0, 0.7);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,6 +6,8 @@
 
 // Hero Section
 .hero {
+  @include u.flex(center, flex-start);
+
   height: calc(100vh - u.$navbar-height);
   width: 100%;
   background: url("../images/hero.png") no-repeat center center/cover;
@@ -21,8 +23,15 @@
   @include u.breakpoint("small") {
     height: calc(100vh - u.$navbar-height);
   }
-}
 
+  .showcase {
+    &__box {
+      background-color: rgba($color: #665e5e, $alpha: 0.35);
+      backdrop-filter: blur(2px);
+      border-radius: 1rem;
+    }
+  }
+}
 
 
 
