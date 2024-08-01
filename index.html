@@ -73,7 +73,68 @@
         </button>
       </div>
     </header>
-    <div class="hero"></div>
+    <div class="hero">
+      <div class="container">
+        <div class="showcase py-2 text-center">
+          <h1 class="page-title">The Nile Horizon</h1>
+          <div class="showcase__box p-2">
+            <form action="" class="form form--showcase grid">
+              <div
+                class="form__group form__group--showcase form__group--showcase-location"
+              >
+                <i class="fa-solid fa-location-dot form__icon"></i>
+                <label for="location" class="form__label">Location</label>
+                <input
+                  type="text"
+                  name="location"
+                  id="location"
+                  class="form__control"
+                />
+              </div>
+              <div
+                class="form__group form__group--showcase form__group--showcase-check-in"
+              >
+                <i class="fa-regular fa-calendar-check form__icon"></i>
+                <label for="check-in" class="form__label">Check-in</label>
+                <input
+                  type="date"
+                  name="check-in"
+                  id="check-in"
+                  class="form__control form__control--date"
+                />
+              </div>
+              <div
+                class="form__group form__group--showcase form__group--showcase-check-out"
+              >
+                <i class="fa-regular fa-calendar-check form__icon"></i>
+                <label for="check-out" class="form__label">Check-out</label>
+                <input
+                  type="date"
+                  name="check-out"
+                  id="check-out"
+                  class="form__control form__control--date"
+                />
+              </div>
+              <div
+                class="form__group form__group--showcase form__group--showcase-aduls"
+              >
+                <i class="fa-regular fa-user form__icon"></i>
+                <label for="adults" class="form__label">Adults</label>
+                <input
+                  type="number"
+                  name="adults"
+                  id="adults"
+                  class="form__control"
+                />
+              </div>
+              <button type="submit" class="form__submit form__submit--showcase">
+                <i class="fa-solid fa-search"></i> Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
