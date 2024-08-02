@@ -9,8 +9,8 @@
   @include u.flex(center, flex-start);
 
   height: calc(100% - u.$navbar-height);
-  min-height: 100dvh;
-  min-height: 100vh;
+  min-height: calc(100dvh - u.$navbar-height);
+  min-height: calc(100vh - u.$navbar-height);
   width: 100%;
   background: url("../images/hero.png") no-repeat center center/cover;
   background-color: hsla(0, 0%, 0%, 0.685);
@@ -18,12 +18,12 @@
 
   // Medium Screens
   @include u.breakpoint("medium") {
-    height: calc(100% - u.$rows-navbar-height);
+    min-height: calc(100vh - u.$rows-navbar-height);
   }
 
   // Small Screens
   @include u.breakpoint("small") {
-    height: calc(100% - u.$navbar-height);
+    min-height: calc(100vh - u.$navbar-height);
   }
 
   .showcase {
