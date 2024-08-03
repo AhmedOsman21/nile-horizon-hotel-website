@@ -1,9 +1,8 @@
+// Navbar Elements
 const expandNavbarBtn = document.querySelector(".hamburger__btn");
 const navbar = document.querySelector(".navbar");
 const navbarBackdrop = document.querySelector(".backdrop");
 const hamburgerIcon = document.querySelector(".hamburger__icon");
-
-
 
 // Toggle the navbar show/hide
 function toggleNavbar() {
@@ -12,9 +11,13 @@ function toggleNavbar() {
     if (navbar.classList.contains("expand__navbar")) {
         // Remove the collapse class if the navbar was expanded
         navbar.classList.remove("collapse__navbar");
+        // Scrolling works only on the navbar
+        document.body.classList.add("no-scroll");
     } else {
         // Add the collapse class if the navbar was collapsed
         navbar.classList.add("collapse__navbar");
+        // Reset scrolling behavoir of the page
+        document.body.classList.remove("no-scroll");
     }
     // Making a blur background for the navigation on small screens
     navbarBackdrop.classList.toggle("blur");
