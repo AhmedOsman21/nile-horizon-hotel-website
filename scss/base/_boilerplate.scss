@@ -33,6 +33,15 @@ ul {
   padding-left: 0;
 }
 
+// Remove default browser placeholder when not focused
+input[type='date']:not(:focus):in-range::-webkit-datetime-edit-year-field,
+  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-month-field,
+  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-day-field,
+  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-text {
+    color: transparent;
+  }
+
+
 // Container Width
 .container {
   width: min(100%, u.$max-width);
