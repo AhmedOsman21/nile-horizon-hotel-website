@@ -35,6 +35,8 @@ function hideNavbar() {
     if (navbarShown)  {
         navbar.classList.remove("expand__navbar");
         navbar.classList.add("collapse__navbar");
+        // Reset scrolling behavoir of the page
+        document.body.classList.remove("no-scroll");
     }
     // Hide Backdrop
     if (backdropShown) navbarBackdrop.classList.remove("blur");;
@@ -54,3 +56,6 @@ document.body.addEventListener("keydown", (e) => {
         hideNavbar();
     }
 });
+
+// Close the navbar if viewport changed to avoid overflow bugs
+window.addEventListener("resize", hideNavbar);
