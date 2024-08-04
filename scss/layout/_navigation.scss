@@ -2,6 +2,7 @@
 
 // Navbar container
 .navbar__wrapper {
+  // Make a flex container
   @include u.flex(space-between, center);
 
   height: u.$navbar-height;
@@ -35,7 +36,8 @@
 }
 
 // Navigation Menu
-.navbar, .navbar__collapse {
+.navbar,
+.navbar__collapse {
   @include u.flex(space-between, center);
 
   flex-basis: 80%;
@@ -45,7 +47,7 @@
     flex-basis: 100%;
     justify-content: space-between;
   }
-  
+
   // Small Screens
   @include u.breakpoint("small") {
     display: none;
@@ -56,14 +58,15 @@
     background-color: u.$expand-navbar-background;
     backdrop-filter: blur(4px);
     width: 65%;
-    min-height: 100vh;
-    min-height: 100dvh;
+    height: 100dvh;
+    height: 100vh; // Height fallback
     overflow: auto;
     box-shadow: 0 0 2em 0.5em rgba($color: #000000, $alpha: 0.5);
     transform: translateX(100%);
     animation: slide-in-right 0.2s linear forwards;
   }
 
+  // Phone screens
   @include u.breakpoint("x-small") {
     width: 80%;
   }
@@ -75,6 +78,7 @@
     }
   }
 
+  // List of Items (ul)
   &__list {
     @include u.flex();
 
@@ -89,6 +93,7 @@
     }
   }
 
+  // Items (li)
   &__item {
     text-align: center;
     margin-right: 1.5em;
@@ -107,6 +112,7 @@
     }
   }
 
+  // Links (li > a)
   &__link {
     display: inline-block;
     width: 100%;
@@ -126,6 +132,7 @@
       border-color: u.$main-color-light;
       color: u.$main-color;
 
+      // No border on small — medium screens
       @include u.breakpoint("small") {
         border-color: transparent;
       }
@@ -144,7 +151,7 @@
   }
 }
 
-// Backdrop on the navbar in small screens
+// The dark backdrop behind the navbar in small—medium screens
 .blur {
   @include u.breakpoint("small") {
     @include u.flex(center, center, column);
@@ -156,7 +163,7 @@
     width: 100%;
     animation: blur-dark 0.2s linear forwards;
   }
-  
+
   // Animation for the blur
   @keyframes blur-dark {
     0% {
@@ -185,8 +192,8 @@
     cursor: pointer;
   }
 
-  // Bars icon
-  .hamburger__icon {
+  // The 3 bars of the icon
+  .hamburger__icon { // The middle bar
     display: inline-block;
     width: 1.8em;
     height: 3px;
@@ -217,7 +224,9 @@
     }
   }
 
+  // Change the shape of the icon when expanding navbar
   .hamburger__icon__active {
+    // Small—medium screens
     @include u.breakpoint("small") {
       background-color: transparent;
 
@@ -241,21 +250,26 @@
 
 // Navbar settings when expanding on small screens
 .expand__navbar {
-  @include u.flex(center, flex-start, column);
+  /* Exclusively for small breakpoints to prevent the class from altering the default stylings on large screens */
+  @include u.breakpoint("small") {
+    @include u.flex(center, flex-start, column);
 
-  & .navbar__link {
-    @include u.breakpoint("small") {
-      color: u.$light-grey;
+    // Links
+    & .navbar__link {
+      @include u.breakpoint("small") {
+        color: u.$light-grey;
 
-      &:hover {
-        color: u.$main-color-light;
+        &:hover {
+          color: u.$main-color-light;
+        }
       }
     }
-  }
 
-  .navbar__link__active {
-    font-weight: bold;
-    color: u.$main-color;
+    // Current-page link
+    .navbar__link__active {
+      font-weight: bold;
+      color: u.$main-color;
+    }
   }
 }
 
@@ -266,7 +280,7 @@
 
     animation: slide-out-right 0.2s linear forwards;
     transform: translateX(0);
-  
+
     // Navbar Animation
     @keyframes slide-out-right {
       100% {
