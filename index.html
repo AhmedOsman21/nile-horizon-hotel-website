@@ -77,13 +77,15 @@
       <div class="container">
         <div class="showcase py-2 text-center">
           <h1 class="page-title">The Nile Horizon</h1>
-          <div class="showcase__box p-2">
+          <div class="showcase__box p-2 my-2">
             <form action="" class="form form--showcase grid">
               <div
                 class="form__group form__group--showcase form__group--showcase-location"
               >
-                <i class="fa-solid fa-location-dot form__icon"></i>
-                <label for="location" class="form__label">Location</label>
+                <label for="location" class="form__label"
+                  ><i class="fa-solid fa-location-dot form__label__icon"></i>
+                  Location</label
+                >
                 <div class="input-wrapper">
                   <input
                     type="text"
@@ -96,8 +98,12 @@
               <div
                 class="form__group form__group--showcase form__group--showcase-check-in"
               >
-                <i class="fa-regular fa-calendar-check form__icon"></i>
-                <label for="check-in" class="form__label">Check-in</label>
+                <label for="check-in" class="form__label"
+                  ><i
+                    class="fa-regular fa-calendar-check form__label__icon"
+                  ></i>
+                  Check-in</label
+                >
                 <div class="input-wrapper">
                   <input
                     type="date"
@@ -110,8 +116,12 @@
               <div
                 class="form__group form__group--showcase form__group--showcase-check-out"
               >
-                <i class="fa-regular fa-calendar-check form__icon"></i>
-                <label for="check-out" class="form__label">Check-out</label>
+                <label for="check-out" class="form__label"
+                  ><i
+                    class="fa-regular fa-calendar-check form__label__icon"
+                  ></i>
+                  Check-out</label
+                >
                 <div class="input-wrapper">
                   <input
                     type="date"
@@ -124,8 +134,10 @@
               <div
                 class="form__group form__group--showcase form__group--showcase-adults"
               >
-                <i class="fa-regular fa-user form__icon"></i>
-                <label for="adults" class="form__label">Adults</label>
+                <label for="adults" class="form__label">
+                  <i class="fa-regular fa-user form__label__icon"></i>
+                  Adults</label
+                >
                 <div class="input-wrapper">
                   <input
                     type="number"
@@ -137,7 +149,7 @@
               </div>
               <button
                 type="submit"
-                class="btn form__submit form__submit--showcase"
+                class="btn form__submit form--showcase-submit"
               >
                 <i class="fa-solid fa-search"></i> Search
               </button>
