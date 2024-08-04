@@ -28,7 +28,7 @@ a:focus {
 .page-title {
   font-family: u.$page-title-font;
   @include u.primaryFont;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 1.2rem + 2vw, 3rem);
   color: u.$light-color;
   text-shadow: -2px 4px 4px #222;
   margin-top: 2.5rem;
