@@ -10,7 +10,6 @@
 
   height: calc(100% - u.$navbar-height);
   min-height: calc(100dvh - u.$navbar-height);
-  min-height: calc(100vh - u.$navbar-height);
   width: 100%;
   background: url("../images/hero.png") no-repeat center center/cover;
   background-color: hsla(0, 0%, 0%, 0.685);
@@ -18,19 +17,40 @@
 
   // Medium Screens
   @include u.breakpoint("medium") {
-    min-height: calc(100vh - u.$rows-navbar-height);
+    min-height: 35em; // Adjusted the height of the hero not to fill the whole viewport
   }
 
-  // Small Screens
+  // Mobile Screens
   @include u.breakpoint("small") {
     min-height: calc(100vh - u.$navbar-height);
+    min-height: calc(100svh - u.$navbar-height);
   }
 
+  // Very Large screens
+  @include u.breakpoint-down("xx-large") {
+    min-height: 35em; // Prevent the hero section from filling the whole viewport
+  }
+
+  // Form Section [Title + Form container]
   .showcase {
+    // Tablet sizes
+    @include u.breakpoint-down("medium") {
+      height: 20em;
+      @include u.flex(center, space-between, column);
+      margin-top: 5%;
+    }
+
+    // Large screens
+    @include u.breakpoint-down("large") {
+      margin-top: 10%;
+    }
+
+    // Form container
     &__box {
-      background-color: rgba($color: #665e5e, $alpha: 0.35);
+      background-color: rgba($color: #746f6f, $alpha: 0.35);
       backdrop-filter: blur(2px);
-      border-radius: 1rem;
+      border-radius: 6px;
+      padding: 2.5em 2em;
     }
   }
 }
