@@ -32,7 +32,7 @@ function hideNavbar() {
     const menuOpened = hamburgerIcon.classList.contains("hamburger__icon__active");
 
     // Hide Navbar Widget
-    if (navbarShown)  {
+    if (navbarShown) {
         navbar.classList.remove("expand__navbar");
         navbar.classList.add("collapse__navbar");
         // Reset scrolling behavoir of the page
@@ -59,3 +59,32 @@ document.body.addEventListener("keydown", (e) => {
 
 // Close the navbar if viewport changed to avoid overflow bugs
 window.addEventListener("resize", hideNavbar);
+
+/*
+============== Showcase Form ===============
+ */
+
+// Showcase form elements
+const showcaseInputs = document.querySelectorAll(".form--showcase .form__control");
+const showcaseInputWrappers = document.querySelectorAll(".form--showcase .input-wrapper");
+const showcaseInputLabels = document.querySelectorAll(".form--showcase .form__label");
+
+
+// Events on inputs focus/blur
+showcaseInputs.forEach((input, index) => {
+    input.addEventListener("focus", () => {
+        // Adding animated border.
+        showcaseInputWrappers[index].classList.add('border-decorator');
+        // Activate the label animation
+        showcaseInputLabels[index].classList.add('label-active');
+    });
+    
+    input.addEventListener("blur", () => {
+        // Removing animated border.
+        showcaseInputWrappers[index].classList.remove('border-decorator');
+        // Toggle off the label animation only when no value in the input
+        if (!(input.value)) {
+            showcaseInputLabels[index].classList.remove('label-active');
+        }
+    });
+});
