@@ -27,8 +27,19 @@
       ". submit .";
     gap: 2em;
 
-    // Mobile screens & above
+    // Mobile screens
     @include u.breakpoint-down("x-small") {
+      grid-template-areas: 
+      "location"
+      "check-in" 
+      "check-out"
+      "adults"
+      "submit";
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    // Above mobile screens
+    @include u.breakpoint-down("small") {
       grid-template-areas: 
       "location location"
       "check-in check-out"
