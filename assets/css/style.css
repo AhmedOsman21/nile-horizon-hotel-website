@@ -867,6 +867,12 @@ header {
 }
 @media (min-width: 15.625em) {
   .form--showcase {
+    grid-template-areas: "location" "check-in" "check-out" "adults" "submit";
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 36em) {
+  .form--showcase {
     grid-template-areas: "location location" "check-in check-out" "adults submit";
     grid-template-columns: repeat(2, 1fr);
   }
@@ -999,7 +1005,7 @@ header {
     min-height: 35em;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 36em) {
   .hero .showcase {
     height: 20em;
     display: flex;
