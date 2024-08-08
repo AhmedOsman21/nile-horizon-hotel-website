@@ -34,13 +34,12 @@ ul {
 }
 
 // Remove default browser placeholder when not focused
-input[type='date']:not(:focus):in-range::-webkit-datetime-edit-year-field,
-  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-month-field,
-  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-day-field,
-  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-text {
-    color: transparent;
-  }
-
+input[type="date"]:not(:focus):in-range::-webkit-datetime-edit-year-field,
+input[type="date"]:not(:focus):in-range::-webkit-datetime-edit-month-field,
+input[type="date"]:not(:focus):in-range::-webkit-datetime-edit-day-field,
+input[type="date"]:not(:focus):in-range::-webkit-datetime-edit-text {
+  color: transparent;
+}
 
 // Container Width
 .container {
@@ -56,6 +55,15 @@ input[type='date']:not(:focus):in-range::-webkit-datetime-edit-year-field,
   @include u.breakpoint("medium") {
     padding-inline: 1.2em;
   }
+}
+
+// Section Heading
+.section-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 // Hide
