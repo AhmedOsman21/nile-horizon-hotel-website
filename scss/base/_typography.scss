@@ -1,5 +1,9 @@
 @use "../utilities" as u;
 
+body {
+  line-height: 1.6;
+}
+
 h1,
 h2,
 h3 {
@@ -36,6 +40,11 @@ a:focus {
 
 .section-title {
   font-family: u.$section-title-font;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
+  text-transform: uppercase;
+  color: u.$main-color;
 }
 
 .text-center {
