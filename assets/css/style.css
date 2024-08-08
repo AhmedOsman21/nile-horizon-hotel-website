@@ -306,6 +306,10 @@ template {
   display: none;
 }
 
+body {
+  line-height: 1.6;
+}
+
 h1,
 h2,
 h3 {
@@ -343,6 +347,11 @@ a:focus {
 
 .section-title {
   font-family: "Bitter", "Genos", Georgia, Garamond, serif;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
+  text-transform: uppercase;
+  color: hsl(22, 75%, 31%);
 }
 
 .text-center {
@@ -401,6 +410,14 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
   .container {
     padding-inline: 1.2em;
   }
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .hidden {
@@ -550,6 +567,29 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
 }
 .btn:hover, .btn:focus {
   background-color: hsl(22, 84%, 37%);
+}
+
+.line-right {
+  display: inline-block;
+  height: 2px;
+  background-color: #000;
+  width: 5em;
+  position: relative;
+}
+
+.line-right {
+  margin-left: 1em;
+}
+.line-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.4rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: translateY(-50%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background-color: inherit;
 }
 
 .navbar__wrapper {
