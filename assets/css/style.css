@@ -320,6 +320,7 @@ h3 {
 
 p {
   margin-top: 0;
+  color: hsl(0, 0%, 41%);
 }
 
 a,
@@ -335,23 +336,28 @@ a:focus {
 }
 
 .page-title {
-  font-family: "primary-font", "Bitter", Georgia, Garamond, serif;
-  font-weight: 800;
-  letter-spacing: 3px;
-  word-spacing: -10px;
-  font-size: clamp(1.2rem, 1.2rem + 2vw, 3rem);
+  font-family: "Genos", "Bitter", Georgia, Garamond, serif;
+  font-size: clamp(1.2rem, 2rem + 2vw, 3.5rem);
   color: hsl(0, 0%, 100%);
   text-shadow: -2px 4px 4px #222;
   margin-top: 2.5rem;
 }
 
 .section-title {
-  font-family: "Bitter", "Genos", Georgia, Garamond, serif;
+  font-family: "Bitter", Georgia, Garamond, serif;
   margin-bottom: 0;
   font-weight: 400;
   font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
   text-transform: uppercase;
   color: hsl(22, 75%, 31%);
+}
+
+.lead {
+  font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
+  font-family: "Lato", System-ui, -apple-system, sans-serif;
+  color: hsl(0, 0%, 20%);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .text-center {
