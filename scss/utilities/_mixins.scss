@@ -49,7 +49,7 @@ $down-breakpoints: (
   }
 }
 
-// The font used for page title needs configurations to be shown good
+// The primary font needs configurations to be shown properly
 @mixin primaryFont() {
   font-weight: 800;
   letter-spacing: 3px;
