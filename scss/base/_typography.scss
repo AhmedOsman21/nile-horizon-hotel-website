@@ -14,6 +14,7 @@ h3 {
 
 p {
   margin-top: 0;
+  color: u.$medium-color;
 }
 
 a,
@@ -27,7 +28,6 @@ a:hover,
 a:focus {
   color: u.$main-color-light;
 }
-
 
 .page-title {
   font-family: u.$page-title-font;
@@ -49,6 +49,9 @@ a:focus {
 .lead {
   font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
   font-family: u.$lato-font;
+  color: u.$dark-color;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .text-center {
