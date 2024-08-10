@@ -31,8 +31,7 @@ a:focus {
 
 .page-title {
   font-family: u.$page-title-font;
-  @include u.primaryFont;
-  font-size: clamp(1.2rem, 1.2rem + 2vw, 3rem);
+  font-size: clamp(1.2rem, 2rem + 2vw, 3.5rem);
   color: u.$light-color;
   text-shadow: -2px 4px 4px #222;
   margin-top: 2.5rem;
@@ -45,6 +44,11 @@ a:focus {
   font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
   text-transform: uppercase;
   color: u.$main-color;
+}
+
+.lead {
+  font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
+  font-family: u.$lato-font;
 }
 
 .text-center {
