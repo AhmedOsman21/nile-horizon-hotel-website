@@ -24,11 +24,6 @@ a:active {
   color: u.$dark-color;
 }
 
-a:hover,
-a:focus {
-  color: u.$main-color-light;
-}
-
 .page-title {
   font-family: u.$page-title-font;
   font-size: clamp(1.2rem, 2rem + 2vw, 3.5rem);
