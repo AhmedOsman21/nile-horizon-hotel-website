@@ -1,3 +1,4 @@
+// Lines placeholder
 %ornament-line {
   display: inline-block;
   height: 2px;
@@ -6,20 +7,51 @@
   position: relative;
 }
 
-// Right Lines
-.line-right {
+// The polygon of the lines
+%polygon {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); // Center vertically
+  width: 0.5rem;
+  height: 0.5rem;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background-color: inherit;
+}
+
+// Line on the right end (only)
+.line-right-only {
   @extend %ornament-line;
   margin-left: 1em;
 
+  // Polygon at the end of the line
   &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
+    @extend %polygon;
     right: -0.4rem;
-    width: 0.5rem;
-    height: 0.5rem;
-    transform: translateY(-50%);
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    background-color: inherit;
+  }
+}
+
+// Lines on both ends
+// Right Lines
+.line-right {
+  @extend %ornament-line;
+  margin-left: 1rem;
+
+  // Polygon at the start of the line
+  &::after {
+    @extend %polygon;
+    left: -0.4rem;
+  }
+}
+
+// Left Lines
+.line-left {
+  @extend %ornament-line;
+  margin-right: 1em;
+
+  // Polygon at the start of the line
+  &::after {
+    @extend %polygon;
+    right: -0.4rem;
   }
 }
