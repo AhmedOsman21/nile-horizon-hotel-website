@@ -145,6 +145,11 @@
       // The text under the heading
       .lead {
         text-align: center;
+
+        // Align on the left on larger screens
+        @include u.breakpoint-down("medium") {
+          text-align: left;
+        }
       }
 
       // The read-more button

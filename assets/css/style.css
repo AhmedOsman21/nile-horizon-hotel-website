@@ -1227,6 +1227,11 @@ header {
 .home-a .grid-container .text-content .lead {
   text-align: center;
 }
+@media (min-width: 48em) {
+  .home-a .grid-container .text-content .lead {
+    text-align: left;
+  }
+}
 .home-a .grid-container .text-content .read-more {
   margin-top: 0.4rem;
 }
