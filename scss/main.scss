@@ -45,6 +45,11 @@
       margin-top: 10%;
     }
 
+    // Very large screens
+    @include u.breakpoint-down("xx-large") {
+      margin-top: 5%;
+    }
+
     // Form container
     &__box {
       background-color: rgba($color: #746f6f, $alpha: 0.35);
