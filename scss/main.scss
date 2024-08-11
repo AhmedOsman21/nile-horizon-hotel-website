@@ -59,3 +59,98 @@
     }
   }
 }
+
+// Home: About Us
+.home-a {
+  margin-bottom: 3.5rem; // Seperate this section from the followed one
+
+  // The main container
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "img"
+      "text";
+    grid-template-rows: 1fr 1fr;
+    row-gap: 3rem;
+
+    // Grid layout on tablet screens
+    @include u.breakpoint-down("medium") {
+      grid-template-areas: "text img";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      column-gap: 1rem;
+    }
+
+    // Increase gap on large screens
+    @include u.breakpoint-down("large") {
+      column-gap: 5rem;
+    }
+
+    // The images column
+    .visual-content {
+      @include u.flex(center, center);
+      grid-area: img;
+      position: relative;
+
+      // Align it on the right on tablet+ screens
+      @include u.breakpoint-down("medium") {
+        @include u.flex(flex-end, center, column);
+      }
+
+      // The image in the back
+      .back-image {
+        width: 70%;
+        height: 100%;
+        border-radius: 6px;
+        box-shadow: 0 0 7px 1px #333;
+        object-fit: cover;
+      }
+
+      // The front image
+      .front-image {
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 0 3px u.$light-color, 1px 1px 10px #333;
+        border-radius: 0 0 4px 4px;
+
+        // Adjust on screens above the mobile size
+        @include u.breakpoint-down("small") {
+          width: 50%;
+          height: 60%;
+          top: 50%;
+          left: 10%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    // The text area
+    .text-content {
+      grid-area: text;
+
+      // The heading [ABOUT US]
+      .section-heading {
+        @include u.flex;
+
+        // Align it on the left on larger screens
+        @include u.breakpoint-down("medium") {
+          @include u.flex(flex-start, center);
+        }
+      }
+
+      // The text under the heading
+      .lead {
+        text-align: center;
+      }
+
+      // The read-more button
+      .read-more {
+        margin-top: 0.4rem;
+      }
+    }
+  }
+}
