@@ -1,3 +1,5 @@
+@use "../utilities/" as u;
+
 // Lines placeholder
 %ornament-line {
   display: inline-block;
@@ -27,6 +29,39 @@
   // Polygon at the end of the line
   &::after {
     @extend %polygon;
+    left: -0.4rem;
+
+    // Make the polygon at the start on above-tablet screens
+    @include u.breakpoint-down("medium") {
+      left: calc(100% - 0.4rem);
+    }
+  }
+}
+
+// line on the left end (when screen is small)
+.line-left-variable {
+  display: inline-block;
+  height: 2px;
+  background-color: #000;
+  width: 5em;
+  position: relative;
+  margin-right: 1em;
+
+  // Hide the variable line when screen gets bigger
+  @include u.breakpoint-down("medium") {
+    display: none;
+  }
+
+  // Polygon at the start of the line
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); // Center vertically
+    width: 0.5rem;
+    height: 0.5rem;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    background-color: inherit;
     right: -0.4rem;
   }
 }
