@@ -27,7 +27,7 @@
   }
 
   // Very Large screens
-  @include u.breakpoint-down("xx-large") {
+  @include u.breakpoint-down("x-large") {
     min-height: 35em; // Prevent the hero section from filling the whole viewport
   }
 
@@ -45,7 +45,7 @@
     }
 
     // Very large screens
-    @include u.breakpoint-down("xx-large") {
+    @include u.breakpoint-down("x-large") {
       margin-top: 5%;
     }
 
