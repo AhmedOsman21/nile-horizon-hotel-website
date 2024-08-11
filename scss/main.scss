@@ -35,7 +35,6 @@
   .showcase {
     // Above mobile screens
     @include u.breakpoint-down("small") {
-      height: 20em;
       @include u.flex(center, space-between, column);
       margin-top: 5%;
     }
