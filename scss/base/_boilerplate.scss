@@ -71,6 +71,23 @@ input[type="date"]:not(:focus):in-range::-webkit-datetime-edit-text {
   overflow: hidden;
 }
 
+// Text Alignment
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+}
+
 // Padding
 .p-1 {
   padding: 1rem;
