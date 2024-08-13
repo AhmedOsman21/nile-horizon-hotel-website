@@ -6,7 +6,7 @@ $breakpoints: (
   "small": em(767.98),
   "medium": em(1099.98),
   "large": em(1260),
-  "x-large": em(1400)
+  "x-large": em(1400),
 );
 
 $down-breakpoints: (
@@ -15,7 +15,7 @@ $down-breakpoints: (
   "medium": em(768),
   "large": em(1100),
   "x-large": em(1200),
-  "xx-large": em(1400)
+  "xx-large": em(1400),
 );
 
 // Breakpoint for max-width
@@ -54,4 +54,11 @@ $down-breakpoints: (
   font-weight: 800;
   letter-spacing: 3px;
   word-spacing: -10px;
+}
+
+// Change alignment based on media queries
+@mixin align-mq($alignment, $size) {
+  @include breakpoint-down($size) {
+    text-align: $alignment;
+  }
 }
