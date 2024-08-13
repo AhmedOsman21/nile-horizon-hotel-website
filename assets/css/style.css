@@ -424,6 +424,22 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
   overflow: hidden;
 }
 
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+}
+
 .p-1 {
   padding: 1rem;
 }
@@ -1210,6 +1226,11 @@ header {
 .home-a .grid-container .text-content {
   grid-area: text;
 }
+@media (min-width: 48em) {
+  .home-a .grid-container .text-content {
+    text-align: left;
+  }
+}
 .home-a .grid-container .text-content .section-heading {
   display: flex;
   flex-direction: row;
@@ -1224,16 +1245,8 @@ header {
     align-items: center;
   }
 }
-.home-a .grid-container .text-content .lead {
-  text-align: center;
-}
-@media (min-width: 48em) {
-  .home-a .grid-container .text-content .lead {
-    text-align: left;
-  }
-}
 .home-a .grid-container .text-content .read-more {
-  margin-top: 0.4rem;
+  margin-top: 1.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */
