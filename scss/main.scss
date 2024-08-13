@@ -131,30 +131,21 @@
     // The text area
     .text-content {
       grid-area: text;
+      @include u.align-mq(left, "medium"); // Align text on left on larger screens
 
       // The heading [ABOUT US]
       .section-heading {
-        @include u.flex;
+        @include u.flex; // Center
 
-        // Align it on the left on larger screens
+        // Medium and above-medium screens
         @include u.breakpoint-down("medium") {
-          @include u.flex(flex-start, center);
+          @include u.flex(flex-start, center); // Align it on the left on larger screens
         }
       }
 
-      // The text under the heading
-      .lead {
-        text-align: center;
-
-        // Align on the left on larger screens
-        @include u.breakpoint-down("medium") {
-          text-align: left;
-        }
-      }
-
-      // The read-more button
+      // The read-more button container
       .read-more {
-        margin-top: 0.4rem;
+        margin-top: 1.4rem;
       }
     }
   }
