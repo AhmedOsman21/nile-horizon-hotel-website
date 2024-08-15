@@ -38,6 +38,7 @@ a:active {
   font-weight: 400;
   font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
   color: u.$main-color;
+  white-space: nowrap;
 }
 
 .lead {
