@@ -81,6 +81,22 @@ input[type="date"]:not(:focus):in-range::-webkit-datetime-edit-text {
   color: u.$light-color;
 }
 
+// Background Colors
+.bg-dark {
+  background-color: u.$dark-color;
+  color: u.$light-color;
+}
+
+.bg-light {
+  background-color: u.$light-color;
+  color: u.$dark-color;
+}
+
+.bg-main {
+  background-color: u.$main-color;
+  color: u.$light-color;
+}
+
 // Text Alignment
 .center {
   text-align: center;
