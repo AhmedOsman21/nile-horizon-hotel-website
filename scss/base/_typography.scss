@@ -39,6 +39,7 @@ a:active {
   font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
   color: u.$main-color;
   white-space: nowrap;
+  margin-bottom: 0.9rem;
 }
 
 .lead {
@@ -46,7 +47,7 @@ a:active {
   font-family: u.$lato-font;
   color: u.$dark-color;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   letter-spacing: 1px;
 }
 
