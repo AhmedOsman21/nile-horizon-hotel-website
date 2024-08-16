@@ -343,8 +343,8 @@ a:active {
   margin-bottom: 0;
   font-weight: 400;
   font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
-  text-transform: uppercase;
   color: hsl(22, 75%, 31%);
+  white-space: nowrap;
 }
 
 .lead {
@@ -352,7 +352,7 @@ a:active {
   font-family: "Lato", System-ui, -apple-system, sans-serif;
   color: hsl(0, 0%, 20%);
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   letter-spacing: 1px;
 }
 
@@ -400,7 +400,7 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
 }
 
 .container {
-  width: min(100%, 75rem);
+  width: min(100%, 68.75rem);
   margin-inline: auto;
 }
 @media (max-width: 78.75em) {
@@ -409,13 +409,17 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
   }
 }
 
+.section {
+  margin-bottom: 5rem;
+}
+
 .section-heading {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .hidden {
@@ -424,6 +428,29 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.icon-main {
+  color: hsl(22, 75%, 31%);
+}
+
+.icon-light {
+  color: hsl(0, 0%, 100%);
+}
+
+.bg-dark {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 100%);
+}
+
+.bg-light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 20%);
+}
+
+.bg-main {
+  background-color: hsl(22, 75%, 31%);
+  color: hsl(0, 0%, 100%);
 }
 
 .center {
@@ -570,11 +597,19 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
   margin-inline: 5rem;
 }
 
-.btn-outline, .btn-main, .btn {
+.ornament-btn, .btn, .btn-outline, a.btn-main {
   border: none;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.4s ease-out;
+  position: relative;
+}
+
+.btn-outline, a.btn-main {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 3rem;
 }
 
 .btn {
@@ -589,17 +624,15 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
   background-color: hsl(22, 84%, 37%);
 }
 
-.btn-main {
-  padding: 0.8rem 3rem;
+a.btn-main {
   background-color: hsl(22, 75%, 31%);
   color: hsl(0, 0%, 100%);
 }
-.btn-main:hover, .btn-main:focus {
+a.btn-main:hover, a.btn-main:focus {
   background-color: hsl(22, 84%, 37%);
 }
 
 .btn-outline {
-  padding: 0.8rem 0;
   padding-right: 3rem;
   background-color: transparent;
   color: hsl(22, 75%, 31%);
@@ -608,7 +641,38 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
 .btn-outline:hover, .btn-outline:focus {
   background-color: hsl(22, 75%, 31%);
   color: hsl(0, 0%, 100%);
-  padding: 0.8rem 3rem;
+  padding: 0.5rem 3rem;
+}
+
+.ornament-btn::before {
+  content: "";
+  position: absolute;
+  width: 1.3rem;
+  height: 1px;
+  background-color: white;
+  top: 50%;
+  right: 1.4rem;
+  transform: translateY(-50%);
+  transition: width 0.4s ease;
+}
+.ornament-btn::after {
+  content: "";
+  position: absolute;
+  width: 0.2rem;
+  height: 2px;
+  background-color: transparent;
+  top: 50%;
+  right: 1.2rem;
+  border: 0 solid transparent;
+  border-width: 3px 0 3px 6px;
+  border-left-color: white;
+  transform: translateY(-50%);
+}
+.ornament-btn:hover {
+  padding-inline: 2rem 4rem;
+}
+.ornament-btn:hover::before {
+  width: 20%;
 }
 
 .line-left, .line-right, .line-right-only {
@@ -679,6 +743,12 @@ input[type=date]:not(:focus):in-range::-webkit-datetime-edit-text {
 }
 .line-left::after {
   right: -0.4rem;
+}
+
+@media (max-width: 47.99875em) {
+  .line {
+    display: none;
+  }
 }
 
 .navbar__wrapper {
@@ -1117,7 +1187,6 @@ header {
   background: url("../images/hero.png") no-repeat center center/cover;
   background-color: hsla(0, 0%, 0%, 0.685);
   background-blend-mode: darken;
-  margin-bottom: 3.5rem;
 }
 @media (max-width: 68.74875em) {
   .hero {
@@ -1161,52 +1230,49 @@ header {
   padding: 2.5em 2em;
 }
 
-.home-a {
-  margin-bottom: 3.5rem;
-}
-.home-a .grid-container {
+#home-a .grid-container {
   display: grid;
   grid-template-areas: "img" "text";
-  grid-template-rows: 1fr 1fr;
-  row-gap: 3rem;
+  grid-template-rows: 1fr;
+  row-gap: 2rem;
 }
 @media (min-width: 48em) {
-  .home-a .grid-container {
+  #home-a .grid-container {
     grid-template-areas: "text img";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    column-gap: 1rem;
-  }
-}
-@media (min-width: 68.75em) {
-  .home-a .grid-container {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 18.75rem;
     column-gap: 5rem;
   }
 }
-.home-a .grid-container .visual-content {
+@media (min-width: 68.75em) {
+  #home-a .grid-container {
+    column-gap: 5rem;
+  }
+}
+#home-a .grid-container .visual-content {
+  grid-area: img;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  grid-area: img;
   position: relative;
 }
 @media (min-width: 48em) {
-  .home-a .grid-container .visual-content {
+  #home-a .grid-container .visual-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
   }
 }
-.home-a .grid-container .visual-content .back-image {
+#home-a .grid-container .visual-content .back-image {
   width: 70%;
   height: 100%;
   border-radius: 6px;
   box-shadow: 0 0 7px 1px #333;
   object-fit: cover;
 }
-.home-a .grid-container .visual-content .front-image {
+#home-a .grid-container .visual-content .front-image {
   position: absolute;
   top: -1rem;
   left: 0;
@@ -1217,7 +1283,7 @@ header {
   border-radius: 0 0 4px 4px;
 }
 @media (min-width: 36em) {
-  .home-a .grid-container .visual-content .front-image {
+  #home-a .grid-container .visual-content .front-image {
     width: 50%;
     height: 60%;
     top: 50%;
@@ -1225,30 +1291,102 @@ header {
     transform: translateY(-50%);
   }
 }
-.home-a .grid-container .text-content {
+#home-a .grid-container .text-content {
   grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 48em) {
-  .home-a .grid-container .text-content {
+  #home-a .grid-container .text-content {
     text-align: left;
   }
 }
-.home-a .grid-container .text-content .section-heading {
+@media (min-width: 36em) {
+  #home-a .grid-container .text-content {
+    display: block;
+  }
+}
+#home-a .grid-container .text-content .section-heading {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 @media (min-width: 48em) {
-  .home-a .grid-container .text-content .section-heading {
+  #home-a .grid-container .text-content .section-heading {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
   }
 }
-.home-a .grid-container .text-content .read-more {
+#home-a .grid-container .text-content .lead {
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 48em) {
+  #home-a .grid-container .text-content .lead {
+    margin-block: 1rem 0.8rem;
+  }
+}
+@media (min-width: 48em) {
+  #home-a .grid-container .text-content .lead {
+    text-align: left;
+  }
+}
+#home-a .grid-container .text-content .read-more {
   margin-top: 1.4rem;
+}
+
+#home-b .services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  row-gap: 1.2rem;
+  column-gap: 3rem;
+}
+@media (min-width: 48em) {
+  #home-b .services {
+    column-gap: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 1.5rem;
+  }
+}
+@media (min-width: 75em) {
+  #home-b .services {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+#home-b .services .service {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  align-content: center;
+  line-height: 1.4;
+  place-self: center;
+  width: 80%;
+}
+@media (min-width: 48em) {
+  #home-b .services .service {
+    width: 100%;
+  }
+  #home-b .services .service:nth-child(2) {
+    display: none;
+  }
+}
+@media (min-width: 75em) {
+  #home-b .services .service:nth-child(2) {
+    display: unset;
+  }
+}
+#home-b .services .service__icon {
+  font-size: clamp(1.2rem, 1.5rem + 2vw, 1.8rem);
+}
+#home-b .services .service__title {
+  margin-block: 0.5rem 1rem;
+}
+#home-b .services .service__paragraph {
+  font-size: clamp(0.4rem, 0.5rem + 2vw, 0.8rem);
 }
 
 /*# sourceMappingURL=style.css.map */
