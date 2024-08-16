@@ -90,3 +90,11 @@
     right: -0.4rem;
   }
 }
+
+
+// All lines 
+.line {
+  @include u.breakpoint("small") {
+    display: none;
+  }
+}
