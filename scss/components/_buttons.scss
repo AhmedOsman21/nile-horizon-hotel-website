@@ -1,55 +1,103 @@
-@use '../utilities/' as u;
+@use "../utilities/" as u;
 
-// General placeholder
+// General button placeholder
 %btn {
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.4s ease-out;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  position: relative;
+}
+
+// Button on the page
+%page-btn {
+  @extend %btn;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; // Centers the text vertically and horizontally
+  padding: 0.5rem 3rem;
 }
 
 // Normal Button
 .btn {
-    @extend %btn;    
-    padding: 1em 2em;
-    background-color: u.$main-color;
-    color: u.$light-color;
-    border-radius: u.em(5);
-    cursor: pointer;
-    transition: all 0.4s ease-out;
+  @extend %btn;
+  padding: 1em 2em;
+  background-color: u.$main-color;
+  color: u.$light-color;
+  border-radius: u.em(5);
+  cursor: pointer;
+  transition: all 0.4s ease-out;
 
-    &:hover,
-    &:focus {
-        background-color: u.$main-color-light;
-    }
+  &:hover,
+  &:focus {
+    background-color: u.$main-color-light;
+  }
 }
 
-// Main Buttons
-.btn-main {
-    @extend %btn;
-    padding: 0.8rem 3rem;
-    background-color: u.$main-color;
-    color: u.$light-color;
+// Main Page Buttons
+a.btn-main {
+  @extend %page-btn;
+  background-color: u.$main-color;
+  color: u.$light-color;
 
-    &:hover,
-    &:focus {
-        background-color: u.$main-color-light;
-    }
+  &:hover,
+  &:focus {
+    background-color: u.$main-color-light;
+  }
 }
 
-// Outlined Buttons
+// Outlined Page Buttons
 .btn-outline {
-    @extend %btn;
-    padding: 0.8rem 0;
-    padding-right: 3rem;
-    background-color: transparent;
-    color: u.$main-color;
-    text-align: left;
+  @extend %page-btn;
+  padding-right: 3rem;
+  background-color: transparent;
+  color: u.$main-color;
+  text-align: left;
 
-    &:hover,
-    &:focus {
-        background-color: u.$main-color;
-        color: u.$light-color;
-        padding: 0.8rem 3rem;
+  &:hover,
+  &:focus {
+    background-color: u.$main-color;
+    color: u.$light-color;
+    padding: 0.5rem 3rem;
+  }
+}
+
+// Button ornaments
+.ornament-btn {
+  @extend %btn;
+  // The arrow line
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1.3rem;
+    height: 1px;
+    background-color: white;
+    top: 50%;
+    right: 1.4rem;
+    transform: translateY(-50%);
+    transition: width 0.4s ease;
+  }
+
+  // The arrow triangle
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0.2rem;
+    height: 2px;
+    background-color: transparent;
+    top: 50%;
+    right: calc(1.4rem - 0.2rem);
+    border: 0 solid transparent;
+    border-width: 3px 0 3px 6px;
+    border-left-color: white;
+    transform: translateY(-50%);
+  }
+
+  &:hover {
+    padding-inline: 2rem 4rem;
+
+    &::before {
+      width: 20%;
     }
+  }
 }
