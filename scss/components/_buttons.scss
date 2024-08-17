@@ -106,3 +106,24 @@ button.ornament-btn-outline {
     }
   }
 }
+
+a.ornament-btn-outline,
+button.ornament-btn-outline {
+  &::before {
+    background-color: u.$main-color;
+  }
+  
+  &::after {
+    border-left-color: u.$main-color;
+  }
+
+  &:hover {
+    &::before {
+      background-color: u.$light-color;
+    }
+
+    &::after {
+      border-left-color: u.$light-color;
+    }
+  }
+}
