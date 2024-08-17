@@ -35,7 +35,8 @@
 }
 
 // Main Page Buttons
-a.btn-main {
+a.btn-main,
+button.btn-main {
   @extend %page-btn;
   background-color: u.$main-color;
   color: u.$light-color;
@@ -47,7 +48,8 @@ a.btn-main {
 }
 
 // Outlined Page Buttons
-.btn-outline {
+a.btn-outline,
+button.btn-outline {
   @extend %page-btn;
   padding-right: 3rem;
   background-color: transparent;
@@ -63,7 +65,10 @@ a.btn-main {
 }
 
 // Button ornaments
-.ornament-btn {
+a.ornament-btn,
+button.ornament-btn,
+a.ornament-btn-outline,
+button.ornament-btn-outline {
   @extend %btn;
   // The arrow line
   &::before {
