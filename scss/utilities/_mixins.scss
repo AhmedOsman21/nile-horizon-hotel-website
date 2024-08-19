@@ -62,3 +62,10 @@ $down-breakpoints: (
     text-align: $alignment;
   }
 }
+
+
+// Background image overlay
+@mixin background-overlay($opacity: 0.685) {
+  background-color: hsla(0, 0%, 0%, $opacity);
+  background-blend-mode: darken;
+}
