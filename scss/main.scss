@@ -4,16 +4,15 @@
 @forward "utilities";
 @forward "layout";
 
-// Hero Section
-.hero {
+// Home: [Hero Section]
+.home-hero {
   @include u.flex(center, flex-start);
 
   height: calc(100% - u.$navbar-height);
   min-height: calc(100dvh - u.$navbar-height);
   width: 100%;
   background: url("../images/hero.png") no-repeat center center/cover;
-  background-color: hsla(0, 0%, 0%, 0.685);
-  background-blend-mode: darken;
+  @include u.background-overlay;
 
   // Medium Screens
   @include u.breakpoint("medium") {
@@ -61,7 +60,6 @@
 
 // Home: [About Us]
 #home-a {
-
   // The main container
   .grid-container {
     display: grid;
@@ -89,7 +87,7 @@
       grid-area: img;
       @include u.flex(center, center);
       position: relative;
-      
+
       // Align it on the right on tablet+ screens
       @include u.breakpoint-down("medium") {
         @include u.flex(flex-end, center, column);
@@ -130,7 +128,10 @@
     .text-content {
       grid-area: text;
       @include u.flex(center, center, column);
-      @include u.align-mq(left, "medium"); // Align text on left on larger screens
+      @include u.align-mq(
+        left,
+        "medium"
+      ); // Align text on left on larger screens
 
       @include u.breakpoint-down("small") {
         display: block;
@@ -142,7 +143,10 @@
 
         // Medium and above-medium screens
         @include u.breakpoint-down("medium") {
-          @include u.flex(flex-start, center); // Align it on the left on larger screens
+          @include u.flex(
+            flex-start,
+            center
+          ); // Align it on the left on larger screens
         }
       }
 
@@ -151,7 +155,10 @@
         @include u.breakpoint-down("medium") {
           margin-block: 1rem 0.8rem;
         }
-        @include u.align-mq(left, "medium"); // Align text on left on larger screens      
+        @include u.align-mq(
+          left,
+          "medium"
+        ); // Align text on left on larger screens
       }
 
       // The read-more button container
@@ -167,7 +174,7 @@
   // Services container
   .services {
     display: grid;
-    
+
     grid-template-columns: repeat(auto-fit, minmax(u.rem(200), 1fr));
     row-gap: 1.2rem;
     column-gap: 3rem;
@@ -221,8 +228,19 @@
 
       // Service paragraph
       &__paragraph {
-        font-size: clamp(0.4rem, 0.5rem + 2vw, 0.8rem);
+        font-size: clamp(0.6rem, 0.6rem + 2vw, 0.8rem);
       }
+    }
+  }
+}
+
+// Home: [Rooms & Suites]
+#home-c {
+  .section-heading {
+    @include u.flex(flex-start);
+
+    .section-title {
+      font-size: 1rem;
     }
   }
 }
