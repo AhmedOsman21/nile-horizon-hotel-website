@@ -243,4 +243,18 @@
       font-size: 1rem;
     }
   }
+
+  .lead {
+    text-align: left;
+  }
+
+  .home-rooms {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include u.breakpoint-down("large") {
+      grid-template-columns: 1fr 4fr;
+      gap: 0.5rem;
+    }
+
 }
