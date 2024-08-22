@@ -256,33 +256,53 @@
       grid-template-columns: 1fr 4fr;
       gap: 0.5rem;
     }
-  }
 
-  &__sidebar {
-    display: none;
+    &__sidebar {
+      display: none;
 
-    // Tablets
-    @include u.breakpoint-down("medium") {
-      @include u.flex(space-between, center);
-      gap: 1rem;
+      // Tablets
+      @include u.breakpoint-down("medium") {
+        @include u.flex(space-between, center);
+        gap: 1rem;
 
-      .explore {
-        display: none;
+        .explore {
+          display: none;
+        }
       }
-    }
 
-    @include u.breakpoint-down("large") {
-      @include u.flex(flex-start, flex-start, column);
-      box-shadow: 2px 2px 2px u.$medium-color;
-      gap: 1.5rem;
+      @include u.breakpoint-down("large") {
+        @include u.flex(flex-start, flex-start, column);
+        box-shadow: 2px 2px 2px u.$medium-color;
+        gap: 1.5rem;
 
-      .explore {
-        display: block;
-        width: 100%;
+        .explore {
+          display: block;
+          width: 100%;
 
-        button {
-          padding: 0.5em 2em;
-          font-size: 0.8rem;
+          button {
+            padding: 0.5em 2em;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .sidebar__search {
+        position: relative;
+        &-label {
+          position: absolute;
+          color: u.$medium-color;
+        }
+
+        &-input {
+          border: none;
+          outline-color: transparent;
+          padding: 0.5rem 0;
+        }
+
+        .label-active {
+          top: -1rem;
+          left: -0.5rem;
+          font-size: 0.7rem;
         }
       }
     }
