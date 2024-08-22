@@ -305,6 +305,40 @@
           font-size: 0.7rem;
         }
       }
+
+      .nav-list {
+        @include u.breakpoint-down("medium") {
+          @include u.flex(space-between, center);
+          gap: min(0.9rem + 4vw, 7rem);
+        }
+
+        @include u.breakpoint-down("large") {
+          @include u.flex(flex-start, flex-start, column);
+          margin: 0;
+          gap: 2rem;
+          width: 100%;
+        }
+
+        .nav-item {
+          font-size: clamp(0.6rem, 0.8rem + 2vw, 0.8rem);
+
+          @include u.breakpoint-down("large") {
+            width: 60%;
+            font-size: 1rem;
+          }
+
+          .nav-link {
+            display: inline-block;
+            color: u.$dark-color;
+            width: 100%;
+
+            &:hover,
+            &:focus {
+              color: u.$main-color;
+            }
+          }
+        }
+      }
     }
   }
 }
