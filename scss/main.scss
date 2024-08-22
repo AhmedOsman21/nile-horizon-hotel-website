@@ -256,5 +256,35 @@
       grid-template-columns: 1fr 4fr;
       gap: 0.5rem;
     }
+  }
 
+  &__sidebar {
+    display: none;
+
+    // Tablets
+    @include u.breakpoint-down("medium") {
+      @include u.flex(space-between, center);
+      gap: 1rem;
+
+      .explore {
+        display: none;
+      }
+    }
+
+    @include u.breakpoint-down("large") {
+      @include u.flex(flex-start, flex-start, column);
+      box-shadow: 2px 2px 2px u.$medium-color;
+      gap: 1.5rem;
+
+      .explore {
+        display: block;
+        width: 100%;
+
+        button {
+          padding: 0.5em 2em;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 }
