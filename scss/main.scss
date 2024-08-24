@@ -236,6 +236,7 @@
 
 // Home: [Rooms & Suites]
 #home-c {
+  // Heading
   .section-heading {
     @include u.flex(flex-start);
 
@@ -244,10 +245,12 @@
     }
   }
 
+  // Lead
   .lead {
     text-align: left;
   }
 
+  // Section content
   .home-rooms {
     display: grid;
     grid-template-columns: 1fr;
@@ -257,28 +260,34 @@
       gap: 0.5rem;
     }
 
+    // The sidebar
     &__sidebar {
       display: none;
-
+      
       // Tablets
       @include u.breakpoint-down("medium") {
         @include u.flex(space-between, center);
         gap: 1rem;
-
+        margin-bottom: 1rem;
+        
+        // The explore button in the sidebar
         .explore {
           display: none;
         }
       }
-
+      
+      // On large screens
       @include u.breakpoint-down("large") {
         @include u.flex(flex-start, flex-start, column);
         box-shadow: 2px 2px 2px u.$medium-color;
         gap: 1.5rem;
 
+        // Display the sidebar's explore button
         .explore {
           display: block;
           width: 100%;
 
+          // Editing the button size
           button {
             padding: 0.5em 2em;
             font-size: 0.8rem;
@@ -286,6 +295,7 @@
         }
       }
 
+      // Sidebar search container
       .sidebar__search {
         position: relative;
         &-label {
@@ -293,19 +303,22 @@
           color: u.$medium-color;
         }
 
+        // Search input
         &-input {
           border: none;
           outline-color: transparent;
           padding: 0.5rem 0;
         }
 
+        // Label when input is in focus
         .label-active {
           top: -1rem;
-          left: -0.5rem;
+          left: -.5rem;
           font-size: 0.7rem;
         }
       }
 
+      // Navigation of the sidebar
       .nav-list {
         @include u.breakpoint-down("medium") {
           @include u.flex(space-between, center);
@@ -319,14 +332,16 @@
           width: 100%;
         }
 
+        // Sidebar's navigation items
         .nav-item {
-          font-size: clamp(0.6rem, 0.8rem + 2vw, 0.8rem);
-
+          font-size: clamp(0.6rem, 0.8rem + 2vw, .8rem);
+          
           @include u.breakpoint-down("large") {
             width: 60%;
             font-size: 1rem;
           }
 
+          // Navigation links
           .nav-link {
             display: inline-block;
             color: u.$dark-color;
