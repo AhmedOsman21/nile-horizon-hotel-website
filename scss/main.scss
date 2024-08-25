@@ -355,5 +355,17 @@
         }
       }
     }
+
+    // Grid container of categories.
+    &__categories {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    
+      // Two columns on larger screens
+      @include u.breakpoint-down("medium") {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   }
 }
