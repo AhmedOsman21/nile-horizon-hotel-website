@@ -389,6 +389,7 @@
         }
       }
 
+      // Each category card
       .luxury-rooms {
         background: url("../images/luxury-rooms.jpeg") center center/cover;
         @include u.background-overlay;
