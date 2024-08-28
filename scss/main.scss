@@ -389,6 +389,30 @@
         }
       }
 
+      .luxury-rooms {
+        background: url("../images/luxury-rooms.jpeg") center center/cover;
+        @include u.background-overlay;
+      }
+      .international-food {
+        background: url("../images/international-food.jpg") center center/cover;
+        @include u.background-overlay;
+      }
+      .event-halls {
+        background: url("../images/events-hall.jpg") center center/cover;
+        @include u.background-overlay;
+      }
+      .meeting-rooms {
+        background: url("../images/meeting-rooms.jpeg") center center/cover;
+        @include u.background-overlay;
+      }
+      .living-rooms {
+        background: url("../images/living-rooms.jpg") center center/cover;
+        @include u.background-overlay(0.8);
+      }
+      .special-rooms {
+        background: url("../images/room4.jpg") center center/cover;
+        @include u.background-overlay(0.8);
+      }
     }
   }
 }
