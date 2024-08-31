@@ -281,6 +281,7 @@
         @include u.flex(flex-start, flex-start, column);
         box-shadow: 2px 2px 2px u.$medium-color;
         gap: 1.5rem;
+        margin-bottom: 0; // Resetting the margin bottom
 
         // Display the sidebar's explore button
         .explore {
