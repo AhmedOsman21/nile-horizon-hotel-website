@@ -268,7 +268,7 @@
       @include u.breakpoint-down("medium") {
         @include u.flex(space-between, center);
         gap: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
 
         // The explore button in the sidebar
         .explore {
