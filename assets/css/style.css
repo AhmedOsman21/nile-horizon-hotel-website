@@ -814,7 +814,7 @@ button.ornament-btn-outline:hover::after {
 }
 @media (max-width: 68.74875em) {
   .navbar__wrapper {
-    height: 6.25em;
+    height: 6.0625em;
     flex-wrap: wrap;
     justify-content: center;
     padding-inline: 1.2em;
@@ -1468,7 +1468,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   #home-c .home-rooms__sidebar .explore {
     display: none;
@@ -1482,6 +1482,7 @@ header {
     align-items: flex-start;
     box-shadow: 2px 2px 2px hsl(0, 0%, 41%);
     gap: 1.5rem;
+    margin-bottom: 0;
   }
   #home-c .home-rooms__sidebar .explore {
     display: block;
