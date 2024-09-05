@@ -78,7 +78,7 @@ showcaseInputs.forEach((input, index) => {
         // Activate the label animation
         showcaseInputLabels[index].classList.add('label-active');
     });
-    
+
     input.addEventListener("blur", () => {
         // Removing animated border.
         showcaseInputWrappers[index].classList.remove('border-decorator');
@@ -88,3 +88,24 @@ showcaseInputs.forEach((input, index) => {
         }
     });
 });
+
+// Search input in "Rooms & Suites" section in the home page
+const homeRoomSearch = document.querySelector(".home-rooms__sidebar .sidebar__search");
+const homeRoomSearchLabel = document.querySelector("#sidebar__search-label");
+const homeRoomSearchInput = document.querySelector("#home-rooms-search");
+
+// When search input is on focus
+homeRoomSearchInput.addEventListener("focus", function () {
+    // Add the active class to the label
+    homeRoomSearchLabel.classList.add("label-active");
+    this.classList.add("input-border-down");
+});
+
+// When search input is on blur
+homeRoomSearchInput.addEventListener("blur", function () {
+    // Remove the active class from the label, only if input is empty
+    if (!(this.value)) {
+        homeRoomSearchLabel.classList.remove("label-active");
+        this.classList.remove("input-border-down");
+    }
+})
