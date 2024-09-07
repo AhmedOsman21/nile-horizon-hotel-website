@@ -98,17 +98,22 @@ button.ornament-btn-outline {
     transform: translateY(-50%);
   }
 
+  // On hover
   &:hover {
     padding-inline: 2rem 4rem;
 
+    // The arrow head
     &::before {
       width: 20%;
     }
   }
 }
 
+// OUtlined Button with ornament
 a.ornament-btn-outline,
 button.ornament-btn-outline {
+
+  // Arrow Colors
   &::before {
     background-color: u.$main-color;
   }
@@ -117,6 +122,7 @@ button.ornament-btn-outline {
     border-left-color: u.$main-color;
   }
 
+  // Change colors on hover
   &:hover {
     &::before {
       background-color: u.$light-color;
